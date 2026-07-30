@@ -232,3 +232,32 @@ create policy "activity_feed_friends_read" on public.activity_feed for select us
 
 drop policy if exists "activity_kudos_owner" on public.activity_kudos;
 create policy "activity_kudos_owner" on public.activity_kudos for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- =========================================================================
+-- 3. FRIENDS FEATURE — real cross-account connections + friend dashboards
+-- =========================================================================
+-- Safe to re-run even if sections 1-2 already ran.
+
+-- Lets the friend dashboard show "N workouts completed".
+alter table public.user_stats add column if not exists workouts_completed_total int not null default 0;
+
+-- A friendship is stored as a single directed row (whoever entered the code
+-- is user_id, the code's owner is friend_id). Because "friendships_owner"
+-- already allows SELECT when auth.uid() matches EITHER column, both people
+-- see the connection once it exists — no need for a second mirrored row.
+--
+-- The activity feed policy below has to account for that same either-side
+-- shape: I should be able to read a friend's posts whether I was the one
+-- who added them, or they were the one who added me.
+drop policy if exists "activity_feed_friends_read" on public.activity_feed;
+create policy "activity_feed_friends_read" on public.activity_feed for select using (
+  auth.uid() = user_id
+  or exists (
+    select 1 from public.friendships f
+    where f.status = 'accepted'
+      and (
+        (f.user_id = auth.uid() and f.friend_id = activity_feed.user_id)
+        or (f.friend_id = auth.uid() and f.user_id = activity_feed.user_id)
+      )
+  )
+);

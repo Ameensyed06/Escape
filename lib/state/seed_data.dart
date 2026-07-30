@@ -75,10 +75,3 @@ List<WorkoutDay> seedRoutine() => [
   ),
   WorkoutDay(weekday: 7, title: 'Rest Day', exercises: []),
 ];
-
-List<Friend> seedFriends() => [
-  Friend(id: _uuid.v4(), name: 'Maya Chen', code: 'MAYA482', avatarSeed: 3, rank: 'Elite Focus Operative', focusScore: 892, currentStreak: 14, workoutsDone: 41, minutesFocusedToday: 95),
-  Friend(id: _uuid.v4(), name: 'Diego Torres', code: 'DIEGO117', avatarSeed: 7, rank: 'Focus Operative', focusScore: 640, currentStreak: 6, workoutsDone: 22, minutesFocusedToday: 40),
-  Friend(id: _uuid.v4(), name: 'Priya Nair', code: 'PRIYA905', avatarSeed: 12, rank: 'Discipline Cadet', focusScore: 410, currentStreak: 3, workoutsDone: 15, minutesFocusedToday: 0),
-  Friend(id: _uuid.v4(), name: 'Owen Blake', code: 'OWEN339', avatarSeed: 19, rank: 'Elite Focus Operative', focusScore: 955, currentStreak: 21, workoutsDone: 58, minutesFocusedToday: 130),
-];

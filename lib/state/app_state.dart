@@ -10,7 +10,9 @@ import 'package:uuid/uuid.dart';
 
 import '../models/models.dart';
 import '../services/auth_service.dart';
+import '../services/social_service.dart';
 import '../utils/date_utils.dart';
+import '../utils/rank_utils.dart';
 import 'seed_data.dart';
 
 const _uuid = Uuid();
@@ -26,6 +28,7 @@ class SetLog {
 class AppState extends ChangeNotifier {
   AppState() {
     _authService = AuthService(Supabase.instance.client);
+    _social = SocialService(Supabase.instance.client);
     _load();
   }
 
@@ -33,10 +36,14 @@ class AppState extends ChangeNotifier {
 
   late SharedPreferences _prefs;
   late final AuthService _authService;
+  late final SocialService _social;
   StreamSubscription<AuthState>? _authSub;
   bool ready = false;
 
   AuthService get auth => _authService;
+
+  /// This user's shareable friend code, once loaded (see [_loadSocialData]).
+  String? myFriendCode;
 
   // ---- Auth ----
   bool signedIn = false;
@@ -69,8 +76,10 @@ class AppState extends ChangeNotifier {
   int focusMinutesTotal = 0;
   int streakDays = 0;
   double totalVolume = 0;
+  int workoutsCompletedTotal = 0;
   String _lastFocusDateKey = '';
   String _lastStreakDateKey = '';
+  int _focusSessionSeconds = 0;
 
   // ---- In-memory workout set logging (per exercise id) ----
   final Map<String, List<SetLog>> exerciseLogs = {};
@@ -86,12 +95,12 @@ class AppState extends ChangeNotifier {
     goals = _readList('goals_v1', Goal.fromJson) ?? seedGoals();
     blockedApps = _readList('blocked_apps_v1', BlockedApp.fromJson) ?? seedBlockedApps();
     routine = _readList('routine_v1', WorkoutDay.fromJson) ?? seedRoutine();
-    friends = _readList('friends_v1', Friend.fromJson) ?? seedFriends();
-    activity = _buildFeedFromFriends();
+    // friends/activity are cloud-backed (see _loadSocialData) — no local seed.
 
     focusMinutesTotal = _prefs.getInt('focus_minutes_total_v1') ?? 0;
     streakDays = _prefs.getInt('streak_days_v1') ?? 0;
     totalVolume = _prefs.getDouble('volume_total_v1') ?? 0;
+    workoutsCompletedTotal = _prefs.getInt('workouts_completed_total_v1') ?? 0;
     _lastFocusDateKey = _prefs.getString('focus_date_v1') ?? '';
     _lastStreakDateKey = _prefs.getString('streak_date_v1') ?? '';
     focusMinutesToday = _lastFocusDateKey == todayKey()
@@ -128,11 +137,6 @@ class AppState extends ChangeNotifier {
     jsonEncode(routine.map((d) => d.toJson()).toList()),
   );
 
-  Future<void> _saveFriends() => _prefs.setString(
-    'friends_v1',
-    jsonEncode(friends.map((f) => f.toJson()).toList()),
-  );
-
   Future<void> _saveStats() async {
     await _prefs.setInt('focus_minutes_total_v1', focusMinutesTotal);
     await _prefs.setInt('focus_minutes_today_v1', focusMinutesToday);
@@ -140,6 +144,35 @@ class AppState extends ChangeNotifier {
     await _prefs.setInt('streak_days_v1', streakDays);
     await _prefs.setString('streak_date_v1', _lastStreakDateKey);
     await _prefs.setDouble('volume_total_v1', totalVolume);
+    await _prefs.setInt('workouts_completed_total_v1', workoutsCompletedTotal);
+    _syncStatsToCloud();
+  }
+
+  /// Best-effort push of aggregate stats to Supabase so friends can see them
+  /// on the friend dashboard. Never blocks or throws into the caller.
+  void _syncStatsToCloud() {
+    final uid = _authService.currentUser?.id;
+    if (uid == null) return;
+    _social
+        .upsertUserStats(
+          userId: uid,
+          focusMinutesTotal: focusMinutesTotal,
+          streakDays: streakDays,
+          totalVolume: totalVolume,
+          workoutsCompletedTotal: workoutsCompletedTotal,
+        )
+        .catchError((_) {});
+  }
+
+  /// Best-effort post to the activity feed. Never blocks or throws into the
+  /// caller — if Supabase isn't configured yet or the request fails, the
+  /// local action (finishing a workout, etc.) still succeeds.
+  void _postActivity(String type, String message, String statLabel) {
+    final uid = _authService.currentUser?.id;
+    if (uid == null) return;
+    _social
+        .postActivity(userId: uid, type: type, message: message, statLabel: statLabel)
+        .catchError((_) {});
   }
 
   void _haptic([HapticType type = HapticType.light]) {
@@ -158,11 +191,20 @@ class AppState extends ChangeNotifier {
 
   void _bindAuth() {
     _applyUser(_authService.currentUser);
+    if (signedIn) _loadSocialData();
     _authSub = _authService.onAuthStateChange.listen((data) {
       if (data.event == AuthChangeEvent.passwordRecovery) {
         passwordRecoveryPending = true;
       }
+      final wasSignedIn = signedIn;
       _applyUser(data.session?.user);
+      if (signedIn && !wasSignedIn) {
+        _loadSocialData();
+      } else if (!signedIn && wasSignedIn) {
+        friends = [];
+        activity = [];
+        myFriendCode = null;
+      }
       notifyListeners();
     });
   }
@@ -181,6 +223,25 @@ class AppState extends ChangeNotifier {
         : email.split('@').first;
   }
 
+  /// Loads (or refreshes) this user's friend code, friends list, and feed
+  /// from Supabase. Safe to call repeatedly; silently no-ops if Supabase
+  /// isn't configured yet or the request fails.
+  Future<void> _loadSocialData() async {
+    final uid = _authService.currentUser?.id;
+    if (uid == null) return;
+    try {
+      myFriendCode = await _social.ensureFriendCode(uid);
+      friends = await _social.fetchFriends(uid);
+      activity = await _social.fetchActivity(myUserId: uid);
+      notifyListeners();
+    } catch (_) {
+      // Offline, or Supabase not configured yet — leave lists as-is; the
+      // UI already has an empty-state message for this.
+    }
+  }
+
+  Future<void> refreshSocial() => _loadSocialData();
+
   void clearPasswordRecovery() {
     passwordRecoveryPending = false;
     notifyListeners();
@@ -196,12 +257,11 @@ class AppState extends ChangeNotifier {
     goals = seedGoals();
     blockedApps = seedBlockedApps();
     routine = seedRoutine();
-    friends = seedFriends();
-    activity = _buildFeedFromFriends();
     focusMinutesToday = 0;
     focusMinutesTotal = 0;
     streakDays = 0;
     totalVolume = 0;
+    workoutsCompletedTotal = 0;
     focusRemaining = const Duration(minutes: focusDefaultMinutes);
     focusActive = false;
     _ticker?.cancel();
@@ -224,21 +284,23 @@ class AppState extends ChangeNotifier {
 
   // ================= Rank / XP =================
 
-  int get xp =>
-      focusMinutesTotal + (totalCompletedGoalsLifetime * 10) + (streakDays * 5) + totalVolume.round() ~/ 10;
+  RankStats get _myRankStats => RankStats(
+    focusMinutesTotal: focusMinutesTotal,
+    streakDays: streakDays,
+    totalVolume: totalVolume,
+    workoutsCompleted: workoutsCompletedTotal,
+    goalsCompleted: totalCompletedGoalsLifetime,
+  );
 
-  int get level => (xp ~/ 200) + 1;
+  int get xp => xpForStats(_myRankStats);
+
+  int get level => levelForXp(xp);
 
   int get xpIntoLevel => xp % 200;
 
   double get levelProgress => xpIntoLevel / 200;
 
-  String get rankTitle {
-    if (level >= 10) return 'Elite Focus Operative';
-    if (level >= 6) return 'Focus Operative';
-    if (level >= 3) return 'Discipline Cadet';
-    return 'Recruit';
-  }
+  String get rankTitle => rankTitleForLevel(level);
 
   Future<void> toggleGoal(String id) async {
     final goal = goals.firstWhere((g) => g.id == id);
@@ -263,6 +325,7 @@ class AppState extends ChangeNotifier {
     streakDays = _lastStreakDateKey == yesterday ? streakDays + 1 : 1;
     _lastStreakDateKey = key;
     _saveStats();
+    _postActivity('streak', 'hit a $streakDays day streak', '$streakDays day streak');
   }
 
   Future<void> reorderGoals(int oldIndex, int newIndex) async {
@@ -319,6 +382,7 @@ class AppState extends ChangeNotifier {
   void startFocus() {
     if (focusActive) return;
     focusActive = true;
+    _focusSessionSeconds = 0;
     _haptic(HapticType.medium);
     _ticker?.cancel();
     _ticker = Timer.periodic(const Duration(seconds: 1), (_) => _tickFocus());
@@ -347,10 +411,16 @@ class AppState extends ChangeNotifier {
     if (focusRemaining.inSeconds <= 0) {
       stopFocus();
       focusRemaining = const Duration(minutes: focusDefaultMinutes);
+      final sessionMinutes = _focusSessionSeconds ~/ 60;
+      _focusSessionSeconds = 0;
+      if (sessionMinutes > 0) {
+        _postActivity('focus', 'completed a focus session', '$sessionMinutes min focused');
+      }
       notifyListeners();
       return;
     }
     focusRemaining -= const Duration(seconds: 1);
+    _focusSessionSeconds += 1;
 
     final key = todayKey();
     if (_lastFocusDateKey != key) {
@@ -442,6 +512,7 @@ class AppState extends ChangeNotifier {
       _completedWorkoutKeys.contains('${todayKey()}:${day.weekday}');
 
   Future<void> finishWorkout(WorkoutDay day) async {
+    double sessionVolume = 0;
     for (final ex in day.exercises) {
       final logs = exerciseLogs[ex.id];
       if (logs == null) continue;
@@ -449,69 +520,22 @@ class AppState extends ChangeNotifier {
       if (doneLogs.isEmpty) continue;
       ex.lastWeight = doneLogs.last.weight;
       ex.lastReps = doneLogs.last.reps;
+      sessionVolume += doneLogs.fold<double>(0, (sum, l) => sum + l.weight * l.reps);
     }
     _completedWorkoutKeys.add('${todayKey()}:${day.weekday}');
+    workoutsCompletedTotal += 1;
     _haptic(HapticType.medium);
     await _saveRoutine();
     await _saveStats();
+    _postActivity('workout', 'finished ${day.title}', '${sessionVolume.round()} kg lifted');
     notifyListeners();
   }
 
   // ================= Social =================
-
-  List<ActivityItem> _buildFeedFromFriends() {
-    if (friends.isEmpty) return [];
-    final now = DateTime.now();
-    return [
-      ActivityItem(
-        id: _uuid.v4(),
-        friendId: friends[0].id,
-        friendName: friends[0].name,
-        avatarSeed: friends[0].avatarSeed,
-        type: 'workout',
-        message: 'crushed Leg Day',
-        statLabel: '2,340 kg lifted',
-        timestamp: now.subtract(const Duration(minutes: 24)),
-        kudos: 6,
-      ),
-      if (friends.length > 1)
-        ActivityItem(
-          id: _uuid.v4(),
-          friendId: friends[1].id,
-          friendName: friends[1].name,
-          avatarSeed: friends[1].avatarSeed,
-          type: 'focus',
-          message: 'completed a deep focus session',
-          statLabel: '90 min focused',
-          timestamp: now.subtract(const Duration(hours: 2)),
-          kudos: 3,
-        ),
-      if (friends.length > 2)
-        ActivityItem(
-          id: _uuid.v4(),
-          friendId: friends[2].id,
-          friendName: friends[2].name,
-          avatarSeed: friends[2].avatarSeed,
-          type: 'streak',
-          message: 'hit a new streak milestone',
-          statLabel: '3 day streak',
-          timestamp: now.subtract(const Duration(hours: 5)),
-          kudos: 1,
-        ),
-      if (friends.length > 3)
-        ActivityItem(
-          id: _uuid.v4(),
-          friendId: friends[3].id,
-          friendName: friends[3].name,
-          avatarSeed: friends[3].avatarSeed,
-          type: 'workout',
-          message: 'finished Push Day',
-          statLabel: '3,120 kg lifted',
-          timestamp: now.subtract(const Duration(hours: 9)),
-          kudos: 9,
-        ),
-    ];
-  }
+  //
+  // Friends/activity are fetched from Supabase (see _loadSocialData) rather
+  // than kept locally — this is real cross-account social data, not a demo
+  // seed. Connecting a friend uses a shareable per-user code (myFriendCode).
 
   void toggleKudos(String activityId) {
     final item = activity.firstWhere((a) => a.id == activityId);
@@ -519,22 +543,45 @@ class AppState extends ChangeNotifier {
     item.kudos += item.kudosGiven ? 1 : -1;
     _haptic(HapticType.medium);
     notifyListeners();
+
+    final uid = _authService.currentUser?.id;
+    if (uid == null) return;
+    _social
+        .setKudos(activityId: activityId, userId: uid, given: item.kudosGiven)
+        .catchError((_) {});
   }
 
-  Future<void> addFriendByCode(String code, String name) async {
-    friends.add(Friend(
-      id: _uuid.v4(),
-      name: name,
-      code: code.toUpperCase(),
-      avatarSeed: Random().nextInt(30),
-      rank: 'Discipline Cadet',
-      focusScore: 50,
-      currentStreak: 0,
-      workoutsDone: 0,
-      minutesFocusedToday: 0,
-    ));
-    await _saveFriends();
-    notifyListeners();
+  /// Connects with whoever owns [code]. Throws [FriendConnectException] with
+  /// a user-facing message on failure (invalid code, self-add, duplicate).
+  Future<void> addFriendByCode(String code) async {
+    final uid = _authService.currentUser?.id;
+    if (uid == null) return;
+    await _social.addFriendByCode(myUserId: uid, code: code);
+    await _loadSocialData();
+  }
+
+  /// Looks up a friend's hydrated profile — checks the already-loaded
+  /// [friends] list first, falling back to a fresh fetch.
+  Future<Friend?> friendProfile(String friendId) async {
+    for (final f in friends) {
+      if (f.id == friendId) return f;
+    }
+    try {
+      return await _social.fetchFriend(friendId);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// A single friend's activity history, for the friend dashboard.
+  Future<List<ActivityItem>> friendActivity(String friendId) async {
+    final uid = _authService.currentUser?.id;
+    if (uid == null) return [];
+    try {
+      return await _social.fetchActivity(myUserId: uid, authorIds: [friendId]);
+    } catch (_) {
+      return [];
+    }
   }
 
   // ================= Settings =================

@@ -1,16 +1,11 @@
-
 # ESCAPE
 
-A new Flutter project.
 **Escape Mediocrity** — a productivity and focus-oriented fitness companion app. ESCAPE tracks daily goals, enforces a strict app blocker during focus sessions, logs workouts with progressive overload, and layers in friendly social accountability.
 
-## Getting Started
 Built with Flutter, styled as a light-theme, high-contrast, dark-mode-inspired design system.
 
-This project is a starting point for a Flutter application.
 ## Contents
 
-A few resources to get you started if this is your first Flutter project:
 - [Features](#features)
 - [Tech stack](#tech-stack)
 - [Project structure](#project-structure)
@@ -24,21 +19,16 @@ A few resources to get you started if this is your first Flutter project:
 - [Testing & linting](#testing--linting)
 - [Design system](#design-system)
 - [Data model](#data-model)
+- [Friends & social](#friends--social)
 - [Known limitations](#known-limitations)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
 ## Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 - **Focus Mode** — a countdown timer (default 25 min) with quick +15/+30/+60 minute pills, live `hh:mm:ss` display, and haptic feedback on start/stop.
 - **Daily Commitments (Goals)** — reorderable daily goal list with a circular progress ring, custom icons, scheduled times, and a persistent completion streak.
 - **App Blocker** — mark distracting apps as blocked, track minutes reclaimed per day, search/add apps.
 - **Training Plan (Workouts)** — a Monday–Sunday split with rest days, per-exercise set logging (weight × reps), "PREV" tags showing your last performance for progressive overload, and cumulative volume tracking.
-- **Community (Social)** — a friends rail with streak badges, an activity feed for workouts/focus sessions/streak milestones, and a kudos (👍) reaction.
+- **Community (Social)** — real cross-account friend connections via a shareable 6-character code, a friends rail with streak badges, a friend dashboard (their focus/streak/volume/workout stats + activity history), an activity feed for workouts/focus sessions/streak milestones, and a kudos (👍) reaction.
 - **Profile** — gradient avatar, XP/level/rank progression, a lifetime stats grid (focus minutes, streak days, weight lifted, goals completed), and settings (haptics, notifications, clear local data).
 - **Auth** — full Supabase-backed authentication: email/password sign up & sign in, Google sign-in (browser-redirect OAuth), forgot/reset password, and an email confirmation screen.
 
@@ -48,8 +38,8 @@ samples, guidance on mobile development, and a full API reference.
 |---|---|
 | Framework | Flutter (Dart) |
 | State management | `provider` + `ChangeNotifier` (single `AppState`) |
-| Local persistence | `shared_preferences` (JSON-serialized models) |
-| Backend / Auth | `supabase_flutter` (Supabase Auth; Postgres schema included, not yet wired for app data sync) |
+| Local persistence | `shared_preferences` (goals, workouts, blocked apps — device-local) |
+| Backend | `supabase_flutter` — Auth, plus the social graph (friends, activity feed, cross-user stats) |
 | Animations | `flutter_animate` |
 | Icons | `material_symbols_icons` |
 | IDs | `uuid` |
@@ -63,15 +53,17 @@ lib/
 ├── models/
 │   └── models.dart                # Goal, BlockedApp, RoutineExercise, WorkoutDay, Friend, ActivityItem
 ├── services/
-│   └── auth_service.dart          # Thin wrapper around Supabase Auth calls
+│   ├── auth_service.dart          # Thin wrapper around Supabase Auth calls
+│   └── social_service.dart        # Friend codes, connections, activity feed, cross-user stats
 ├── state/
 │   ├── app_state.dart             # Single ChangeNotifier: all app logic + persistence
-│   └── seed_data.dart             # Default goals/apps/routine/friends for first run
+│   └── seed_data.dart             # Default goals/apps/routine for first run
 ├── theme/
 │   └── app_theme.dart             # Color tokens, spacing, radii, ThemeData
 ├── utils/
 │   ├── date_utils.dart            # Date-key + duration formatting helpers
-│   └── icon_map.dart              # iconKey string -> Material Symbol mapping
+│   ├── icon_map.dart              # iconKey string -> Material Symbol mapping
+│   └── rank_utils.dart            # Shared XP/level/rank formula (used for you AND friends)
 ├── widgets/
 │   ├── common.dart                 # AppCard, GradientAvatar, ProgressRing, buttons, etc.
 │   ├── kinetic_nav_icon.dart       # Animated bottom-nav icon
@@ -87,7 +79,8 @@ lib/
 │   ├── workout_screen.dart         # Tab 3
 │   ├── social_screen.dart          # Tab 4
 │   ├── profile_screen.dart         # Tab 5
-│   └── blocker_screen.dart         # App Blocker (pushed from Goals)
+│   ├── blocker_screen.dart         # App Blocker (pushed from Goals)
+│   └── friend_dashboard_screen.dart # Read-only view of a friend's progress
 └── main.dart                       # Supabase.initialize + app root / auth gate
 
 supabase/
@@ -118,10 +111,13 @@ Create a new project at [supabase.com](https://supabase.com/dashboard) (or reuse
 
 ### 2. Run the database schema
 
-Open **SQL Editor → New query** in your Supabase dashboard, paste the contents of [`supabase/schema.sql`](supabase/schema.sql), and run it. This creates:
+Open **SQL Editor → New query** in your Supabase dashboard, paste the contents of [`supabase/schema.sql`](supabase/schema.sql), and run it (safe to re-run any time — every statement is idempotent). This creates 12 tables:
 
-- **`profiles`** (required) — one row per user, auto-populated via a trigger on `auth.users` insert. Stores the display name shown throughout the app.
-- A reference schema for future cloud sync — `goals`, `goal_completions`, `blocked_apps`, `workout_days`, `routine_exercises`, `exercise_set_logs`, `user_stats`, `friendships`, `friend_codes`, `activity_feed`, `activity_kudos` — all scoped with row-level security to `auth.uid()`. **The app does not yet read/write these tables**; goals, workouts, blocked apps, and friends are currently local-only (`shared_preferences`). This schema exists so cloud sync can be added later without a redesign.
+- **`profiles`** (required for auth) — one row per user, auto-populated via a trigger on `auth.users` insert. Stores the display name shown throughout the app.
+- **Live and wired into the app** — `user_stats` (your aggregate focus minutes / streak / volume / workouts, synced whenever they change), `friend_codes` (your shareable 6-character code), `friendships` (real cross-account connections), `activity_feed` + `activity_kudos` (the Community tab's feed and 👍 reactions).
+- **Reference schema, not yet wired up** — `goals`, `goal_completions`, `blocked_apps`, `workout_days`, `routine_exercises`, `exercise_set_logs`. Goals, workouts, and blocked apps still live on-device (`shared_preferences`); these tables are ready for when that data moves to the cloud too.
+
+All twelve are scoped with row-level security to `auth.uid()` — friendship rows are readable by either side of the connection, and `activity_feed` is readable by the author plus anyone connected to them.
 
 ### 3. Configure auth
 
@@ -204,12 +200,29 @@ Core models live in `lib/models/models.dart`:
 - **`BlockedApp`** — `name`, `iconKey`, `blocked`, `minutesSavedToday`, optional real Android `packageName`/icon bytes.
 - **`RoutineExercise`** — `targetSets`/`targetReps`, `tags`, and `lastWeight`/`lastReps` carried forward for progressive overload.
 - **`WorkoutDay`** — a weekday (1–7) with a list of exercises; an empty list means a rest day.
-- **`Friend`** / **`ActivityItem`** — social feed data (currently seeded locally; see `state/seed_data.dart`).
+- **`Friend`** / **`ActivityItem`** — real cross-account social data, fetched from Supabase by `lib/services/social_service.dart` (see [Friends & social](#friends--social) below).
 
-All app logic and persistence lives in the single `AppState` (`lib/state/app_state.dart`) — focus timer ticking, goal streaks, XP/level/rank calculation, workout set logging and volume tracking, blocked-app toggles, and the Supabase auth session binding.
+All app logic and persistence lives in the single `AppState` (`lib/state/app_state.dart`) — focus timer ticking, goal streaks, XP/level/rank calculation, workout set logging and volume tracking, blocked-app toggles, the Supabase auth session binding, and the friends/activity feed load.
+
+## Friends & social
+
+Every signed-in user gets a shareable 6-character **friend code** (shown at the top of the Community tab, tap to copy). To connect with someone else running the app:
+
+1. They open their own Community tab and copy their code.
+2. You tap the **+** button, paste their code into "Connect a Friend", and submit.
+3. Supabase looks up the code's owner (`friend_codes` table), checks you're not already connected, and creates the connection (`friendships` table) — instant, no accept/decline step.
+
+Once connected:
+
+- Their avatar appears in your **Friends rail**; tapping it opens their **dashboard** — a read-only view of their focus score, streak, workouts completed, rank, and recent activity (`friend_dashboard_screen.dart`).
+- Their **workout finishes**, **completed focus sessions**, and **streak milestones** post to the shared `activity_feed` table automatically (see `AppState._postActivity`), and show up in your Community feed with a 👍 kudos reaction.
+- Ranking (`lib/utils/rank_utils.dart`) uses one formula for everyone, so your rank and a friend's rank are always directly comparable.
+
+This is a live, real backend feature — not seeded demo data. Two people both running the app against the **same Supabase project** can connect and see each other's real progress.
 
 ## Known limitations
 
-- Goals, workouts, blocked apps, and the friends/activity feed are stored locally per-device (`shared_preferences`) — they do not sync across devices or survive an uninstall. The Supabase schema for these is ready (`supabase/schema.sql`) but not yet wired into `AppState`.
-- The social feed and friend list are seeded with sample data; "connect a friend" adds a locally-generated stub rather than a real cross-account connection.
+- Goals, workouts, and blocked apps are stored locally per-device (`shared_preferences`) — they do not sync across devices or survive an uninstall. The Supabase schema for syncing them is ready (`supabase/schema.sql`, section 2) but not yet wired into `AppState`.
+- Friend connections are instant (no request/accept step) — entering a valid code connects immediately.
+- There's no live "currently focused" presence indicator on the friends rail; the dashboard shows aggregate stats, not real-time activity.
 - Google Sign-In uses the browser-redirect OAuth flow rather than a native account picker.
