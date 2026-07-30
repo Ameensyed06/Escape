@@ -10,6 +10,7 @@ import 'package:uuid/uuid.dart';
 
 import '../models/models.dart';
 import '../services/auth_service.dart';
+import '../services/notification_service.dart';
 import '../services/social_service.dart';
 import '../utils/date_utils.dart';
 import '../utils/rank_utils.dart';
@@ -38,6 +39,9 @@ class AppState extends ChangeNotifier {
   late final AuthService _authService;
   late final SocialService _social;
   StreamSubscription<AuthState>? _authSub;
+  Timer? _socialPollTimer;
+  bool _hasLoadedFriendsOnce = false;
+  final Set<String> _scheduledGoalIds = {};
   bool ready = false;
 
   AuthService get auth => _authService;
@@ -63,7 +67,9 @@ class AppState extends ChangeNotifier {
 
   // ---- Settings ----
   bool hapticsEnabled = true;
-  bool notificationsEnabled = true;
+  /// Off by default until the user opts in via Profile — [setNotifications]
+  /// gates this behind the real OS permission prompt.
+  bool notificationsEnabled = false;
 
   // ---- Focus timer ----
   Duration focusRemaining = const Duration(minutes: focusDefaultMinutes);
@@ -90,7 +96,7 @@ class AppState extends ChangeNotifier {
 
     _bindAuth();
     hapticsEnabled = _prefs.getBool('haptics_enabled') ?? true;
-    notificationsEnabled = _prefs.getBool('notifications_enabled') ?? true;
+    notificationsEnabled = _prefs.getBool('notifications_enabled') ?? false;
 
     goals = _readList('goals_v1', Goal.fromJson) ?? seedGoals();
     blockedApps = _readList('blocked_apps_v1', BlockedApp.fromJson) ?? seedBlockedApps();
@@ -106,6 +112,15 @@ class AppState extends ChangeNotifier {
     focusMinutesToday = _lastFocusDateKey == todayKey()
         ? (_prefs.getInt('focus_minutes_today_v1') ?? 0)
         : 0;
+
+    if (notificationsEnabled) {
+      // Re-issue reminders on every launch — Android can drop scheduled
+      // alarms across a device reboot, and this is the simplest way to
+      // guarantee they're always live without a boot-receiver.
+      unawaited(_rescheduleGoalReminders());
+      unawaited(_rescheduleWorkoutReminders());
+      unawaited(_rescheduleStreakNudge());
+    }
 
     ready = true;
     notifyListeners();
@@ -191,7 +206,10 @@ class AppState extends ChangeNotifier {
 
   void _bindAuth() {
     _applyUser(_authService.currentUser);
-    if (signedIn) _loadSocialData();
+    if (signedIn) {
+      _loadSocialData();
+      _startSocialPoll();
+    }
     _authSub = _authService.onAuthStateChange.listen((data) {
       if (data.event == AuthChangeEvent.passwordRecovery) {
         passwordRecoveryPending = true;
@@ -200,10 +218,13 @@ class AppState extends ChangeNotifier {
       _applyUser(data.session?.user);
       if (signedIn && !wasSignedIn) {
         _loadSocialData();
+        _startSocialPoll();
       } else if (!signedIn && wasSignedIn) {
         friends = [];
         activity = [];
         myFriendCode = null;
+        _hasLoadedFriendsOnce = false;
+        _stopSocialPoll();
       }
       notifyListeners();
     });
@@ -226,12 +247,31 @@ class AppState extends ChangeNotifier {
   /// Loads (or refreshes) this user's friend code, friends list, and feed
   /// from Supabase. Safe to call repeatedly; silently no-ops if Supabase
   /// isn't configured yet or the request fails.
+  ///
+  /// Also fires a local "new friend" notification when a friend appears
+  /// that wasn't here on the previous load (skipped on the very first load
+  /// of a session, so signing in doesn't spam one per existing friend).
   Future<void> _loadSocialData() async {
     final uid = _authService.currentUser?.id;
     if (uid == null) return;
     try {
       myFriendCode = await _social.ensureFriendCode(uid);
-      friends = await _social.fetchFriends(uid);
+      final previousIds = friends.map((f) => f.id).toSet();
+      final newFriends = await _social.fetchFriends(uid);
+
+      if (_hasLoadedFriendsOnce && notificationsEnabled) {
+        for (final f in newFriends) {
+          if (previousIds.contains(f.id)) continue;
+          NotificationService.instance.showNow(
+            id: _friendNotifId(f.id),
+            title: 'New Friend',
+            body: '${f.name} connected with you on ESCAPE',
+          );
+        }
+      }
+      _hasLoadedFriendsOnce = true;
+
+      friends = newFriends;
       activity = await _social.fetchActivity(myUserId: uid);
       notifyListeners();
     } catch (_) {
@@ -313,6 +353,7 @@ class AppState extends ChangeNotifier {
       _maybeAdvanceStreak();
     }
     await _saveGoals();
+    unawaited(_rescheduleStreakNudge());
     notifyListeners();
   }
 
@@ -350,6 +391,8 @@ class AppState extends ChangeNotifier {
       scheduledMinutes: scheduledMinutes,
     ));
     await _saveGoals();
+    unawaited(_rescheduleGoalReminders());
+    unawaited(_rescheduleStreakNudge());
     notifyListeners();
   }
 
@@ -366,12 +409,15 @@ class AppState extends ChangeNotifier {
     if (iconKey != null) goal.iconKey = iconKey;
     goal.scheduledMinutes = scheduledMinutes;
     await _saveGoals();
+    unawaited(_rescheduleGoalReminders());
     notifyListeners();
   }
 
   Future<void> deleteGoal(String id) async {
     goals.removeWhere((g) => g.id == id);
     await _saveGoals();
+    unawaited(_rescheduleGoalReminders());
+    unawaited(_rescheduleStreakNudge());
     notifyListeners();
   }
 
@@ -415,6 +461,13 @@ class AppState extends ChangeNotifier {
       _focusSessionSeconds = 0;
       if (sessionMinutes > 0) {
         _postActivity('focus', 'completed a focus session', '$sessionMinutes min focused');
+        if (notificationsEnabled) {
+          NotificationService.instance.showNow(
+            id: _focusCompleteNotifId,
+            title: 'Focus session complete',
+            body: 'You focused for $sessionMinutes min. Nice work.',
+          );
+        }
       }
       notifyListeners();
       return;
@@ -592,16 +645,138 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> setNotifications(bool value) async {
+  /// Enables/disables push notifications. Turning it on requests the real OS
+  /// permission first — returns `false` (and leaves the setting off) if the
+  /// user denies it, so the UI can tell them what happened.
+  Future<bool> setNotifications(bool value) async {
+    if (value) {
+      final granted = await NotificationService.instance.requestPermission();
+      if (!granted) {
+        notificationsEnabled = false;
+        await _prefs.setBool('notifications_enabled', false);
+        notifyListeners();
+        return false;
+      }
+    }
+
     notificationsEnabled = value;
     await _prefs.setBool('notifications_enabled', value);
+    if (value) {
+      await _rescheduleGoalReminders();
+      await _rescheduleWorkoutReminders();
+      await _rescheduleStreakNudge();
+    } else {
+      await NotificationService.instance.cancelAll();
+      _scheduledGoalIds.clear();
+    }
     notifyListeners();
+    return true;
+  }
+
+  // ================= Notifications =================
+  //
+  // All on-device (local) — see NotificationService. Kudos and other social
+  // events that depend on someone else's action would need a real push
+  // service (Firebase Cloud Messaging) to arrive while the app is closed;
+  // "new friend connected" here only fires while the app is open, driven by
+  // the periodic social poll below.
+
+  static const _focusCompleteNotifId = 1;
+  static const _streakNudgeNotifId = 2;
+  static const _goalNotifBase = 10000;
+  static const _workoutNotifBase = 30000;
+  static const _friendNotifBase = 40000;
+
+  int _goalNotifId(String goalId) => _goalNotifBase + (goalId.hashCode.abs() % 9999);
+  int _friendNotifId(String friendId) => _friendNotifBase + (friendId.hashCode.abs() % 999);
+
+  Future<void> _rescheduleGoalReminders() async {
+    final withTimes = goals.where((g) => g.scheduledMinutes != null).toList();
+    final newIds = withTimes.map((g) => g.id).toSet();
+
+    for (final droppedId in _scheduledGoalIds.difference(newIds)) {
+      await NotificationService.instance.cancel(_goalNotifId(droppedId));
+    }
+
+    if (notificationsEnabled) {
+      for (final g in withTimes) {
+        final minutes = g.scheduledMinutes!;
+        await NotificationService.instance.scheduleDaily(
+          id: _goalNotifId(g.id),
+          title: 'Time for: ${g.title}',
+          body: g.target.isEmpty ? 'Keep your streak going.' : g.target,
+          hour: minutes ~/ 60,
+          minute: minutes % 60,
+        );
+      }
+    }
+
+    _scheduledGoalIds
+      ..clear()
+      ..addAll(newIds);
+  }
+
+  Future<void> _rescheduleWorkoutReminders() async {
+    for (var weekday = 1; weekday <= 7; weekday++) {
+      final id = _workoutNotifBase + weekday;
+      if (!notificationsEnabled) {
+        await NotificationService.instance.cancel(id);
+        continue;
+      }
+      final matches = routine.where((d) => d.weekday == weekday);
+      final day = matches.isEmpty ? null : matches.first;
+      if (day == null || day.isRestDay) {
+        await NotificationService.instance.cancel(id);
+        continue;
+      }
+      await NotificationService.instance.scheduleWeekly(
+        id: id,
+        title: "Today's workout: ${day.title}",
+        body: '${day.exercises.length} exercises',
+        weekday: weekday,
+        hour: 7,
+        minute: 0,
+      );
+    }
+  }
+
+  /// One evening nudge if today's goals aren't all done yet. Re-evaluated
+  /// whenever goal completion or the goal list itself changes.
+  Future<void> _rescheduleStreakNudge() async {
+    if (!notificationsEnabled || goals.isEmpty) {
+      await NotificationService.instance.cancel(_streakNudgeNotifId);
+      return;
+    }
+    final remaining = goals.length - completedGoalsTodayCount;
+    if (remaining <= 0) {
+      await NotificationService.instance.cancel(_streakNudgeNotifId);
+      return;
+    }
+    final streakLabel = streakDays > 0 ? 'your $streakDays-day streak' : 'your streak';
+    await NotificationService.instance.scheduleOnceToday(
+      id: _streakNudgeNotifId,
+      title: 'Streak at risk',
+      body: '$remaining goal${remaining == 1 ? '' : 's'} left today — keep $streakLabel alive!',
+      hour: 20,
+      minute: 0,
+    );
+  }
+
+  void _startSocialPoll() {
+    _socialPollTimer?.cancel();
+    _socialPollTimer = Timer.periodic(const Duration(seconds: 60), (_) => _loadSocialData());
+  }
+
+  void _stopSocialPoll() {
+    _socialPollTimer?.cancel();
+    _socialPollTimer = null;
   }
 
   @override
   void dispose() {
     _ticker?.cancel();
     _authSub?.cancel();
+    _socialPollTimer?.cancel();
     super.dispose();
   }
 }

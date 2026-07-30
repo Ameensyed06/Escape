@@ -61,10 +61,26 @@ class ProfileScreen extends StatelessWidget {
                 const Divider(height: 1),
                 SwitchListTile(
                   value: state.notificationsEnabled,
-                  onChanged: state.setNotifications,
+                  onChanged: (value) async {
+                    final granted = await state.setNotifications(value);
+                    if (!granted && context.mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'Notifications are blocked for ESCAPE — enable them in system settings.',
+                          ),
+                          backgroundColor: AppColors.actionOrange,
+                        ),
+                      );
+                    }
+                  },
                   activeThumbColor: AppColors.electricCyan,
                   secondary: const Icon(Symbols.notifications_rounded),
                   title: const Text('Push Notifications'),
+                  subtitle: const Text(
+                    'Focus, goal, workout & streak reminders — plus friend connects while the app is open.',
+                    style: TextStyle(fontSize: 11),
+                  ),
                 ),
               ],
             ),

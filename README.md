@@ -20,6 +20,7 @@ Built with Flutter, styled as a light-theme, high-contrast, dark-mode-inspired d
 - [Design system](#design-system)
 - [Data model](#data-model)
 - [Friends & social](#friends--social)
+- [Notifications](#notifications)
 - [Known limitations](#known-limitations)
 
 ## Features
@@ -30,6 +31,7 @@ Built with Flutter, styled as a light-theme, high-contrast, dark-mode-inspired d
 - **Training Plan (Workouts)** — a Monday–Sunday split with rest days, per-exercise set logging (weight × reps), "PREV" tags showing your last performance for progressive overload, and cumulative volume tracking.
 - **Community (Social)** — real cross-account friend connections via a shareable 6-character code, a friends rail with streak badges, a friend dashboard (their focus/streak/volume/workout stats + activity history), an activity feed for workouts/focus sessions/streak milestones, and a kudos (👍) reaction.
 - **Profile** — gradient avatar, XP/level/rank progression, a lifetime stats grid (focus minutes, streak days, weight lifted, goals completed), and settings (haptics, notifications, clear local data).
+- **Notifications** — real OS permission prompt (Profile → Push Notifications), then on-device reminders for focus completion, scheduled goals, an evening streak-at-risk nudge, weekly workout-day pings, and a "new friend connected" alert (see [Notifications](#notifications) below).
 - **Auth** — full Supabase-backed authentication: email/password sign up & sign in, Google sign-in (browser-redirect OAuth), forgot/reset password, and an email confirmation screen.
 
 ## Tech stack
@@ -220,9 +222,28 @@ Once connected:
 
 This is a live, real backend feature — not seeded demo data. Two people both running the app against the **same Supabase project** can connect and see each other's real progress.
 
+## Notifications
+
+Notifications are **on-device (local)** — built with `flutter_local_notifications`, no third-party push service. Toggling **Profile → Push Notifications** on triggers a real OS permission prompt (`NotificationService.requestPermission`); if denied, the toggle snaps back off and the app tells you to enable it in system settings.
+
+Once enabled:
+
+| Notification | Trigger | Frequency |
+|---|---|---|
+| **Focus session complete** | The countdown timer naturally reaches zero | Immediate |
+| **Scheduled goal reminder** | A `Goal`'s own `scheduledMinutes` time of day, e.g. "Time for: Read 20 pages" | Daily, per goal |
+| **Streak-at-risk nudge** | 8pm, only if goals aren't all done yet | Re-evaluated whenever a goal is toggled/added/removed |
+| **Workout day reminder** | 7am on any non-rest day, e.g. "Today's workout: Push Day — 4 exercises" | Weekly, per training day |
+| **New friend connected** | Someone connects using your code | Immediate — but **in-app only** (see caveat below) |
+
+Everything above is scheduled with `AndroidScheduleMode.inexactAllowWhileIdle`, so no special exact-alarm permission is needed — reminders may land a few minutes off the exact time, which is fine for this use case.
+
+**The "new friend connected" notification only fires while the app is open** (it's driven by a 60-second poll that also keeps the Community tab's friends/activity fresh). Making that — or a "kudos received" notification — arrive when the app is fully closed would need real push infrastructure: a Firebase project (FCM), storing each device's push token, and a Supabase Edge Function triggered on `friendships`/`activity_kudos` inserts that calls FCM. That's a separate, bigger setup not included here.
+
 ## Known limitations
 
 - Goals, workouts, and blocked apps are stored locally per-device (`shared_preferences`) — they do not sync across devices or survive an uninstall. The Supabase schema for syncing them is ready (`supabase/schema.sql`, section 2) but not yet wired into `AppState`.
 - Friend connections are instant (no request/accept step) — entering a valid code connects immediately.
 - There's no live "currently focused" presence indicator on the friends rail; the dashboard shows aggregate stats, not real-time activity.
 - Google Sign-In uses the browser-redirect OAuth flow rather than a native account picker.
+- Notifications are on-device only — see the caveat in [Notifications](#notifications) above for what real push would require.
