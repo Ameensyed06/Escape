@@ -4,14 +4,6 @@ import '../models/models.dart';
 
 const _uuid = Uuid();
 
-List<Goal> seedGoals() => [
-  Goal(id: _uuid.v4(), title: 'Read', target: '20 pages', iconKey: 'book', scheduledMinutes: 540),
-  Goal(id: _uuid.v4(), title: 'Drink water', target: '3 liters', iconKey: 'water', scheduledMinutes: null),
-  Goal(id: _uuid.v4(), title: 'Meditate', target: '10 minutes', iconKey: 'meditation', scheduledMinutes: 420),
-  Goal(id: _uuid.v4(), title: 'No junk food', target: 'All day', iconKey: 'no_junk', scheduledMinutes: null),
-  Goal(id: _uuid.v4(), title: 'Sleep by 11', target: '11:00 PM', iconKey: 'sleep', scheduledMinutes: 1380),
-];
-
 List<BlockedApp> seedBlockedApps() => [
   BlockedApp(id: _uuid.v4(), name: 'Instagram', iconKey: 'instagram', blocked: true, minutesSavedToday: 42),
   BlockedApp(id: _uuid.v4(), name: 'TikTok', iconKey: 'tiktok', blocked: true, minutesSavedToday: 65),

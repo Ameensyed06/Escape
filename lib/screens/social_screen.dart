@@ -120,8 +120,16 @@ class SocialScreen extends StatelessWidget {
                           if (code.isEmpty) return;
                           setSheetState(() => submitting = true);
                           try {
-                            await state.addFriendByCode(code);
+                            final friend = await state.addFriendByCode(code);
                             if (ctx.mounted) Navigator.of(ctx).pop();
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Connected with ${friend.name}!'),
+                                  backgroundColor: AppColors.electricCyan,
+                                ),
+                              );
+                            }
                           } on FriendConnectException catch (e) {
                             setSheetState(() => submitting = false);
                             if (ctx.mounted) {

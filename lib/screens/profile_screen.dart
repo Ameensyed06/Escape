@@ -222,10 +222,11 @@ class _StatsGrid extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       mainAxisSpacing: 10,
       crossAxisSpacing: 10,
-      childAspectRatio: 1.5,
+      childAspectRatio: 1.25,
       children: [
         for (int i = 0; i < items.length; i++)
           AppCard(
+            padding: const EdgeInsets.all(12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -237,8 +238,18 @@ class _StatsGrid extends StatelessWidget {
                   child: Icon(items[i].icon, size: 16, color: items[i].color),
                 ),
                 const Spacer(),
-                Text(items[i].value, style: Theme.of(context).textTheme.titleLarge),
-                Text(items[i].label, style: const TextStyle(color: AppColors.onSurfaceVariant, fontSize: 11)),
+                Text(
+                  items[i].value,
+                  style: Theme.of(context).textTheme.titleLarge,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  items[i].label,
+                  style: const TextStyle(color: AppColors.onSurfaceVariant, fontSize: 11),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ],
             ),
           ).animate().fadeIn(duration: 250.ms, delay: (60 * i).ms).scale(begin: const Offset(0.9, 0.9)),

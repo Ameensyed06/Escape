@@ -98,7 +98,7 @@ class AppState extends ChangeNotifier {
     hapticsEnabled = _prefs.getBool('haptics_enabled') ?? true;
     notificationsEnabled = _prefs.getBool('notifications_enabled') ?? false;
 
-    goals = _readList('goals_v1', Goal.fromJson) ?? seedGoals();
+    goals = _readList('goals_v1', Goal.fromJson) ?? [];
     blockedApps = _readList('blocked_apps_v1', BlockedApp.fromJson) ?? seedBlockedApps();
     routine = _readList('routine_v1', WorkoutDay.fromJson) ?? seedRoutine();
     // friends/activity are cloud-backed (see _loadSocialData) — no local seed.
@@ -294,7 +294,7 @@ class AppState extends ChangeNotifier {
 
   Future<void> clearAllData() async {
     await _prefs.clear();
-    goals = seedGoals();
+    goals = [];
     blockedApps = seedBlockedApps();
     routine = seedRoutine();
     focusMinutesToday = 0;
@@ -305,6 +305,10 @@ class AppState extends ChangeNotifier {
     focusRemaining = const Duration(minutes: focusDefaultMinutes);
     focusActive = false;
     _ticker?.cancel();
+    hapticsEnabled = true;
+    notificationsEnabled = false;
+    _scheduledGoalIds.clear();
+    await NotificationService.instance.cancelAll();
     notifyListeners();
   }
 
@@ -453,6 +457,16 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Sets the timer to exactly [minutes], replacing whatever was there —
+  /// unlike [addFocusMinutes], which adds on top. Works whether or not a
+  /// session is currently running.
+  void setFocusDuration(int minutes) {
+    if (minutes <= 0) return;
+    focusRemaining = Duration(minutes: minutes);
+    _haptic(HapticType.selection);
+    notifyListeners();
+  }
+
   void _tickFocus() {
     if (focusRemaining.inSeconds <= 0) {
       stopFocus();
@@ -584,6 +598,54 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> updateWorkoutDayTitle(int weekday, String title) async {
+    dayFor(weekday).title = title;
+    await _saveRoutine();
+    unawaited(_rescheduleWorkoutReminders());
+    notifyListeners();
+  }
+
+  Future<void> addExercise(
+    int weekday, {
+    required String name,
+    required int targetSets,
+    required int targetReps,
+  }) async {
+    dayFor(weekday).exercises.add(RoutineExercise(
+      id: _uuid.v4(),
+      name: name,
+      targetSets: targetSets,
+      targetReps: targetReps,
+    ));
+    await _saveRoutine();
+    unawaited(_rescheduleWorkoutReminders());
+    notifyListeners();
+  }
+
+  Future<void> updateExercise(
+    int weekday,
+    String exerciseId, {
+    String? name,
+    int? targetSets,
+    int? targetReps,
+  }) async {
+    final ex = dayFor(weekday).exercises.firstWhere((e) => e.id == exerciseId);
+    if (name != null) ex.name = name;
+    if (targetSets != null) ex.targetSets = targetSets;
+    if (targetReps != null) ex.targetReps = targetReps;
+    exerciseLogs.remove(exerciseId); // stale set-count/target no longer matches
+    await _saveRoutine();
+    notifyListeners();
+  }
+
+  Future<void> deleteExercise(int weekday, String exerciseId) async {
+    dayFor(weekday).exercises.removeWhere((e) => e.id == exerciseId);
+    exerciseLogs.remove(exerciseId);
+    await _saveRoutine();
+    unawaited(_rescheduleWorkoutReminders());
+    notifyListeners();
+  }
+
   // ================= Social =================
   //
   // Friends/activity are fetched from Supabase (see _loadSocialData) rather
@@ -604,13 +666,17 @@ class AppState extends ChangeNotifier {
         .catchError((_) {});
   }
 
-  /// Connects with whoever owns [code]. Throws [FriendConnectException] with
-  /// a user-facing message on failure (invalid code, self-add, duplicate).
-  Future<void> addFriendByCode(String code) async {
+  /// Connects with whoever owns [code], returning their profile. Throws
+  /// [FriendConnectException] with a user-facing message on failure
+  /// (invalid code, self-add, duplicate, or not signed in).
+  Future<Friend> addFriendByCode(String code) async {
     final uid = _authService.currentUser?.id;
-    if (uid == null) return;
-    await _social.addFriendByCode(myUserId: uid, code: code);
+    if (uid == null) {
+      throw FriendConnectException('You need to be signed in to connect with friends.');
+    }
+    final friend = await _social.addFriendByCode(myUserId: uid, code: code);
     await _loadSocialData();
+    return friend;
   }
 
   /// Looks up a friend's hydrated profile — checks the already-loaded

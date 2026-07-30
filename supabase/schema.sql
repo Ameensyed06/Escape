@@ -261,3 +261,40 @@ create policy "activity_feed_friends_read" on public.activity_feed for select us
       )
   )
 );
+
+-- =========================================================================
+-- 4. FIX: friends couldn't actually see each other's name or stats
+-- =========================================================================
+-- Bug: "profiles_select_own" and "user_stats_owner" only ever allowed a row
+-- to be read by its own owner. That meant the friends rail, the "connect a
+-- friend" success state, and the friend dashboard could never actually load
+-- another person's display name or stats — connecting "worked" (the
+-- friendships row was created) but showed nothing useful afterward.
+-- These add a second, friend-scoped SELECT policy on each table (Postgres
+-- combines multiple permissive policies for the same command with OR, so
+-- this is additive — it doesn't replace the owner-only policies above).
+-- Safe to re-run even if sections 1-3 already ran.
+
+drop policy if exists "profiles_select_friends" on public.profiles;
+create policy "profiles_select_friends" on public.profiles for select using (
+  exists (
+    select 1 from public.friendships f
+    where f.status = 'accepted'
+      and (
+        (f.user_id = auth.uid() and f.friend_id = profiles.id)
+        or (f.friend_id = auth.uid() and f.user_id = profiles.id)
+      )
+  )
+);
+
+drop policy if exists "user_stats_select_friends" on public.user_stats;
+create policy "user_stats_select_friends" on public.user_stats for select using (
+  exists (
+    select 1 from public.friendships f
+    where f.status = 'accepted'
+      and (
+        (f.user_id = auth.uid() and f.friend_id = user_stats.user_id)
+        or (f.friend_id = auth.uid() and f.user_id = user_stats.user_id)
+      )
+  )
+);

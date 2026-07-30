@@ -63,6 +63,11 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                   textColor: AppColors.cyanDeep,
                   icon: Symbols.check_circle_rounded,
                 ),
+              IconButton(
+                onPressed: () => _showDayTitleEditor(context, state, day),
+                icon: const Icon(Symbols.edit_rounded, color: AppColors.onSurfaceVariant),
+                tooltip: 'Rename day',
+              ),
             ],
           ),
           if (!day.isRestDay) ...[
@@ -102,7 +107,13 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
               ),
             ),
             const SizedBox(height: AppSpacing.md),
-            ...day.exercises.map((ex) => _ExerciseCard(exercise: ex)),
+            ...day.exercises.map((ex) => _ExerciseCard(weekday: day.weekday, exercise: ex)),
+            const SizedBox(height: AppSpacing.md),
+            OutlineButton(
+              label: 'Add Exercise',
+              icon: Symbols.add_rounded,
+              onTap: () => _showExerciseEditor(context, state, day.weekday),
+            ),
             const SizedBox(height: AppSpacing.md),
             GradientButton(
               label: finished ? 'Workout Finished' : 'Finish Workout',
@@ -120,7 +131,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
             ),
           ] else
             Padding(
-              padding: const EdgeInsets.only(top: 60),
+              padding: const EdgeInsets.only(top: 40),
               child: Center(
                 child: Column(
                   children: [
@@ -128,6 +139,12 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
                     const SizedBox(height: 12),
                     Text('Nothing scheduled — enjoy the rest.',
                         style: Theme.of(context).textTheme.bodyMedium),
+                    const SizedBox(height: 20),
+                    OutlineButton(
+                      label: 'Add Exercise',
+                      icon: Symbols.add_rounded,
+                      onTap: () => _showExerciseEditor(context, state, day.weekday),
+                    ),
                   ],
                 ),
               ),
@@ -206,8 +223,9 @@ class _WeekRail extends StatelessWidget {
 }
 
 class _ExerciseCard extends StatefulWidget {
-  const _ExerciseCard({required this.exercise});
+  const _ExerciseCard({required this.weekday, required this.exercise});
 
+  final int weekday;
   final RoutineExercise exercise;
 
   @override
@@ -278,6 +296,17 @@ class _ExerciseCardState extends State<_ExerciseCard> {
                         ),
                       ],
                     ),
+                  ),
+                  IconButton(
+                    onPressed: () => _showExerciseEditor(
+                      context,
+                      state,
+                      widget.weekday,
+                      existing: ex,
+                    ),
+                    icon: const Icon(Symbols.edit_rounded, size: 18, color: AppColors.onSurfaceVariant),
+                    tooltip: 'Edit exercise',
+                    visualDensity: VisualDensity.compact,
                   ),
                   Icon(
                     _expanded ? Symbols.expand_less_rounded : Symbols.expand_more_rounded,
@@ -391,4 +420,155 @@ class _NumberField extends StatelessWidget {
       },
     );
   }
+}
+
+void _showDayTitleEditor(BuildContext context, AppState state, WorkoutDay day) {
+  final titleCtrl = TextEditingController(text: day.title);
+
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) => Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 28),
+        decoration: const BoxDecoration(
+          color: AppColors.surface,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Rename Day', style: Theme.of(ctx).textTheme.titleLarge),
+            const SizedBox(height: 16),
+            TextField(
+              controller: titleCtrl,
+              autofocus: true,
+              decoration: const InputDecoration(labelText: 'Day title'),
+            ),
+            const SizedBox(height: 20),
+            GradientButton(
+              label: 'Save',
+              gradient: AppColors.amberGradient,
+              onTap: () {
+                if (titleCtrl.text.trim().isEmpty) return;
+                state.updateWorkoutDayTitle(day.weekday, titleCtrl.text.trim());
+                Navigator.of(ctx).pop();
+              },
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+void _showExerciseEditor(
+  BuildContext context,
+  AppState state,
+  int weekday, {
+  RoutineExercise? existing,
+}) {
+  final nameCtrl = TextEditingController(text: existing?.name ?? '');
+  final setsCtrl = TextEditingController(text: (existing?.targetSets ?? 3).toString());
+  final repsCtrl = TextEditingController(text: (existing?.targetReps ?? 10).toString());
+
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) => Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 28),
+        decoration: const BoxDecoration(
+          color: AppColors.surface,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              existing == null ? 'Add Exercise' : 'Edit Exercise',
+              style: Theme.of(ctx).textTheme.titleLarge,
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              controller: nameCtrl,
+              autofocus: existing == null,
+              textCapitalization: TextCapitalization.words,
+              decoration: const InputDecoration(labelText: 'Exercise name'),
+            ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: setsCtrl,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(labelText: 'Sets'),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: TextField(
+                    controller: repsCtrl,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(labelText: 'Reps'),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                if (existing != null) ...[
+                  Expanded(
+                    child: OutlineButton(
+                      label: 'Delete',
+                      icon: Symbols.delete_rounded,
+                      onTap: () {
+                        state.deleteExercise(weekday, existing.id);
+                        Navigator.of(ctx).pop();
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                ],
+                Expanded(
+                  child: GradientButton(
+                    label: existing == null ? 'Add' : 'Save',
+                    gradient: AppColors.amberGradient,
+                    onTap: () {
+                      final name = nameCtrl.text.trim();
+                      final sets = int.tryParse(setsCtrl.text.trim());
+                      final reps = int.tryParse(repsCtrl.text.trim());
+                      if (name.isEmpty || sets == null || sets <= 0 || reps == null || reps <= 0) {
+                        return;
+                      }
+                      if (existing == null) {
+                        state.addExercise(weekday, name: name, targetSets: sets, targetReps: reps);
+                      } else {
+                        state.updateExercise(
+                          weekday,
+                          existing.id,
+                          name: name,
+                          targetSets: sets,
+                          targetReps: reps,
+                        );
+                      }
+                      Navigator.of(ctx).pop();
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }

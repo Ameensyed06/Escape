@@ -130,6 +130,19 @@ class _FocusCard extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(width: 4),
+              IconButton(
+                onPressed: () => _showSetTimerSheet(context, state),
+                icon: Icon(
+                  Symbols.edit_rounded,
+                  size: 18,
+                  color: active ? Colors.white70 : AppColors.onSurfaceVariant,
+                ),
+                tooltip: 'Set timer',
+                visualDensity: VisualDensity.compact,
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
+              ),
             ],
           ),
           const SizedBox(height: 18),
@@ -185,6 +198,73 @@ class _FocusCard extends StatelessWidget {
       ),
     ).animate().fadeIn(duration: 350.ms, delay: 80.ms).slideY(begin: 0.06, end: 0);
   }
+}
+
+const _timerPresets = [15, 25, 45, 60, 90];
+
+void _showSetTimerSheet(BuildContext context, AppState state) {
+  final customCtrl = TextEditingController();
+
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) => Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 28),
+        decoration: const BoxDecoration(
+          color: AppColors.surface,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Set Focus Timer', style: Theme.of(ctx).textTheme.titleLarge),
+            const SizedBox(height: 6),
+            const Text(
+              'Pick a duration or enter your own.',
+              style: TextStyle(color: AppColors.onSurfaceVariant, fontSize: 13),
+            ),
+            const SizedBox(height: 16),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: _timerPresets.map((minutes) {
+                return Pill(
+                  label: '$minutes min',
+                  onTap: () {
+                    state.setFocusDuration(minutes);
+                    Navigator.of(ctx).pop();
+                  },
+                );
+              }).toList(),
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              controller: customCtrl,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                labelText: 'Custom minutes',
+                prefixIcon: Icon(Symbols.timer_rounded),
+              ),
+            ),
+            const SizedBox(height: 20),
+            GradientButton(
+              label: 'Set Timer',
+              onTap: () {
+                final minutes = int.tryParse(customCtrl.text.trim());
+                if (minutes == null || minutes <= 0) return;
+                state.setFocusDuration(minutes);
+                Navigator.of(ctx).pop();
+              },
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
 
 class _QuickAddPill extends StatelessWidget {

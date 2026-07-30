@@ -47,7 +47,9 @@ class SocialService {
     return code;
   }
 
-  Future<void> addFriendByCode({required String myUserId, required String code}) async {
+  /// Connects with whoever owns [code], returning their hydrated profile so
+  /// the UI can show a personalized "Connected with X!" confirmation.
+  Future<Friend> addFriendByCode({required String myUserId, required String code}) async {
     final normalized = code.trim().toUpperCase();
     if (normalized.isEmpty) {
       throw FriendConnectException('Enter a friend code.');
@@ -84,6 +86,21 @@ class SocialService {
       'friend_id': targetId,
       'status': 'accepted',
     });
+
+    final hydrated = await _hydrateFriends([targetId]);
+    return hydrated.isNotEmpty
+        ? hydrated.first
+        : Friend(
+            id: targetId,
+            name: 'Operative',
+            code: normalized,
+            avatarSeed: targetId.hashCode.abs() % 30,
+            rank: 'Recruit',
+            focusScore: 0,
+            currentStreak: 0,
+            workoutsDone: 0,
+            minutesFocusedToday: 0,
+          );
   }
 
   Future<List<Friend>> fetchFriends(String myUserId) async {
