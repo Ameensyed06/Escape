@@ -2,7 +2,7 @@
 
 **Escape Mediocrity** — a productivity and focus-oriented fitness companion app. ESCAPE tracks daily goals, enforces a strict app blocker during focus sessions, logs workouts with progressive overload, and layers in friendly social accountability.
 
-Built with Flutter, styled as a light-theme, high-contrast, dark-mode-inspired design system.
+Built with Flutter, styled as a light-theme, high-contrast, dark-mode-inspired design system. A React web app with the same feature set lives in [`web/`](web/) and shares the same Supabase backend — see [`web/README.md`](web/README.md).
 
 ## Contents
 
@@ -21,6 +21,7 @@ Built with Flutter, styled as a light-theme, high-contrast, dark-mode-inspired d
 - [Data model](#data-model)
 - [Friends & social](#friends--social)
 - [Notifications](#notifications)
+- [Web app](#web-app)
 - [Known limitations](#known-limitations)
 
 ## Features
@@ -239,6 +240,10 @@ Once enabled:
 Everything above is scheduled with `AndroidScheduleMode.inexactAllowWhileIdle`, so no special exact-alarm permission is needed — reminders may land a few minutes off the exact time, which is fine for this use case.
 
 **The "new friend connected" notification only fires while the app is open** (it's driven by a 60-second poll that also keeps the Community tab's friends/activity fresh). Making that — or a "kudos received" notification — arrive when the app is fully closed would need real push infrastructure: a Firebase project (FCM), storing each device's push token, and a Supabase Edge Function triggered on `friendships`/`activity_kudos` inserts that calls FCM. That's a separate, bigger setup not included here.
+
+## Web app
+
+[`web/`](web/) is a React + TypeScript + Tailwind port covering the same features (Focus Mode, Goals, App Blocker, Training Plan, Community, Profile, and the full auth flow), built with Vite. It points at the **same Supabase project** as this app — sign in with the same account on both and you'll see the same friend connections, profile, and social activity. Goals/workouts/blocked-apps stay local to each platform (`shared_preferences` on mobile, `localStorage` on web) — only the Supabase-backed social features are actually shared. See [`web/README.md`](web/README.md) for setup and details.
 
 ## Known limitations
 
