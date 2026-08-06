@@ -244,36 +244,40 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     saveStats();
   }
 
+  // Bookkeeping lives here rather than inside the setFocusRemainingSeconds
+  // updater: StrictMode double-invokes updaters, so mutating refs in there
+  // accrued focus minutes twice per second.
   function tickFocus() {
-    setFocusRemainingSeconds((remaining) => {
-      if (remaining <= 0) {
-        stopFocus();
-        const sessionMinutes = Math.floor(focusSessionSecondsRef.current / 60);
-        focusSessionSecondsRef.current = 0;
-        if (sessionMinutes > 0) {
-          postActivityIfSignedIn('focus', 'completed a focus session', `${sessionMinutes} min focused`);
-          if (notificationsEnabled) {
-            showNotification('Focus session complete', `You focused for ${sessionMinutes} min. Nice work.`);
-          }
-        }
-        return FOCUS_DEFAULT_MINUTES * 60;
-      }
-
-      focusSessionSecondsRef.current += 1;
-      const key = todayKey();
-      if (lastFocusDateKeyRef.current !== key) {
-        lastFocusDateKeyRef.current = key;
-        setFocusMinutesToday(0);
-      }
-      secondAccumulatorRef.current += 1;
-      if (secondAccumulatorRef.current >= 60) {
-        secondAccumulatorRef.current = 0;
-        setFocusMinutesToday((m) => m + 1);
-        setFocusMinutesTotal((m) => m + 1);
-      }
-      return remaining - 1;
-    });
+    focusSessionSecondsRef.current += 1;
+    const key = todayKey();
+    if (lastFocusDateKeyRef.current !== key) {
+      lastFocusDateKeyRef.current = key;
+      setFocusMinutesToday(0);
+    }
+    secondAccumulatorRef.current += 1;
+    if (secondAccumulatorRef.current >= 60) {
+      secondAccumulatorRef.current = 0;
+      setFocusMinutesToday((m) => m + 1);
+      setFocusMinutesTotal((m) => m + 1);
+    }
+    setFocusRemainingSeconds((remaining) => (remaining > 0 ? remaining - 1 : 0));
   }
+
+  // Session completion — runs when the countdown lands on zero.
+  useEffect(() => {
+    if (!focusActive || focusRemainingSeconds > 0) return;
+    stopFocus();
+    const sessionMinutes = Math.floor(focusSessionSecondsRef.current / 60);
+    focusSessionSecondsRef.current = 0;
+    setFocusRemainingSeconds(FOCUS_DEFAULT_MINUTES * 60);
+    if (sessionMinutes > 0) {
+      postActivityIfSignedIn('focus', 'completed a focus session', `${sessionMinutes} min focused`);
+      if (notificationsEnabled) {
+        showNotification('Focus session complete', `You focused for ${sessionMinutes} min. Nice work.`);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focusActive, focusRemainingSeconds]);
 
   function startFocus() {
     if (focusActive) return;

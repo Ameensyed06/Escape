@@ -49,7 +49,7 @@ export default function ProfilePage() {
       </div>
 
       <h3 className="mb-3 text-lg font-bold">Settings</h3>
-      <AppCard className="mb-4 !p-0">
+      <AppCard className="mb-4 overflow-hidden !p-0">
         <div className="flex items-center gap-3 border-b border-outline p-4">
           <Bell size={20} className="shrink-0 text-on-surface-variant" />
           <div className="flex-1">
@@ -61,7 +61,7 @@ export default function ProfilePage() {
           <Switch checked={state.notificationsEnabled} onChange={handleNotificationsToggle} />
         </div>
         {notifWarning && (
-          <p className="bg-orange-soft px-4 py-2 text-xs text-orange">
+          <p className="bg-orange-soft p-4 text-xs text-orange">
             Notifications are blocked for this site — enable them in your browser's site settings.
           </p>
         )}

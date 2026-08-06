@@ -107,7 +107,7 @@ function FocusCard() {
   const [customMinutes, setCustomMinutes] = useState('');
 
   return (
-    <AppCard className={active ? 'border-cyan-deep bg-cyan-deep' : ''}>
+    <AppCard className={active ? '!border-cyan-deep !bg-cyan-deep' : ''}>
       <div className="flex items-center gap-1.5">
         <Zap size={20} className={active ? 'text-white' : 'text-cyan'} />
         <span className={`text-sm font-bold ${active ? 'text-white/70' : 'text-on-surface-variant'}`}>
