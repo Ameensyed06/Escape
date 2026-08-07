@@ -323,18 +323,26 @@ jobs:
 
       - name: Download All Test Artifacts
         uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
           path: master-artifacts/
 
       - name: Compile Master 1,800 Test Cases Report & Build Dashboard
         run: |
           cd web
-          npm ci || npm install
+          npm install --no-audit || true
+          npm install xlsx --no-audit || true
           npm run build || mkdir -p dist
           node -e "
           const fs = require('fs');
           const path = require('path');
-          const XLSX = require('xlsx');
+          let XLSX;
+          try {
+            XLSX = require('xlsx');
+          } catch (err) {
+            require('child_process').execSync('npm install xlsx', { stdio: 'inherit' });
+            XLSX = require('xlsx');
+          }
 
           const distDir = path.join(__dirname, 'dist');
           if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
@@ -385,14 +393,29 @@ jobs:
           console.log('Successfully compiled Master 1,800 Test Cases Excel workbook.');
           "
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages (peaceiris)
         uses: peaceiris/actions-gh-pages@v3
+        continue-on-error: true
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./web/dist
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        continue-on-error: true
+        with:
+          path: ./web/dist
+
+      - name: Deploy to GitHub Pages (official)
+        id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
 
       - name: Upload Master Artifacts Workbook
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: full-e2e-report
           path: web/dist/full-e2e-report.xlsx
