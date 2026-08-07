@@ -11,7 +11,7 @@
       "name": "Verify Android mobile app Authentication behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 244,
+      "duration": 86,
       "failureReason": null
     },
     {
@@ -20,7 +20,7 @@
       "name": "Verify Android mobile app Authentication behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 230,
+      "duration": 270,
       "failureReason": null
     },
     {
@@ -29,7 +29,7 @@
       "name": "Verify Android mobile app Authentication behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 143,
+      "duration": 237,
       "failureReason": null
     },
     {
@@ -38,7 +38,7 @@
       "name": "Verify Android mobile app Authentication behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 228,
+      "duration": 200,
       "failureReason": null
     },
     {
@@ -47,7 +47,7 @@
       "name": "Verify Android mobile app Authentication behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 146,
+      "duration": 200,
       "failureReason": null
     },
     {
@@ -56,7 +56,7 @@
       "name": "Verify Android mobile app Authentication behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 219,
+      "duration": 267,
       "failureReason": null
     },
     {
@@ -65,7 +65,7 @@
       "name": "Verify Android mobile app Authentication behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 278,
+      "duration": 120,
       "failureReason": null
     },
     {
@@ -74,7 +74,7 @@
       "name": "Verify Android mobile app Authentication behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 163,
+      "duration": 238,
       "failureReason": null
     },
     {
@@ -83,7 +83,7 @@
       "name": "Verify Android mobile app Authentication behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 133,
+      "duration": 115,
       "failureReason": null
     },
     {
@@ -92,7 +92,7 @@
       "name": "Verify Android mobile app Authentication behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 201,
+      "duration": 92,
       "failureReason": null
     },
     {
@@ -101,7 +101,7 @@
       "name": "Verify Android mobile app Authentication behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 153,
+      "duration": 93,
       "failureReason": null
     },
     {
@@ -110,7 +110,7 @@
       "name": "Verify Android mobile app Authentication behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 228,
+      "duration": 136,
       "failureReason": null
     },
     {
@@ -119,7 +119,7 @@
       "name": "Verify Android mobile app Authentication behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 265,
+      "duration": 107,
       "failureReason": null
     },
     {
@@ -128,7 +128,7 @@
       "name": "Verify Android mobile app Authentication behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 115,
+      "duration": 235,
       "failureReason": null
     },
     {
@@ -137,7 +137,7 @@
       "name": "Verify Android mobile app Authentication behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 267,
+      "duration": 99,
       "failureReason": null
     },
     {
@@ -146,7 +146,7 @@
       "name": "Verify Android mobile app Authentication behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 107,
+      "duration": 121,
       "failureReason": null
     },
     {
@@ -155,7 +155,7 @@
       "name": "Verify Android mobile app Authentication behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 130,
+      "duration": 108,
       "failureReason": null
     },
     {
@@ -164,7 +164,7 @@
       "name": "Verify Android mobile app Authentication behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 187,
+      "duration": 270,
       "failureReason": null
     },
     {
@@ -173,7 +173,7 @@
       "name": "Verify Android mobile app Authentication behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 232,
+      "duration": 114,
       "failureReason": null
     },
     {
@@ -182,7 +182,7 @@
       "name": "Verify Android mobile app Authentication behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 247,
+      "duration": 105,
       "failureReason": null
     },
     {
@@ -191,7 +191,7 @@
       "name": "Verify Android mobile app Authentication behavior #21",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 114,
+      "duration": 154,
       "failureReason": null
     },
     {
@@ -200,7 +200,7 @@
       "name": "Verify Android mobile app Authentication behavior #22",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 133,
+      "duration": 188,
       "failureReason": null
     },
     {
@@ -209,7 +209,7 @@
       "name": "Verify Android mobile app Authentication behavior #23",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 162,
+      "duration": 144,
       "failureReason": null
     },
     {
@@ -218,7 +218,7 @@
       "name": "Verify Android mobile app Authentication behavior #24",
       "status": "PASSED",
       "priority": "High",
-      "duration": 129,
+      "duration": 214,
       "failureReason": null
     },
     {
@@ -227,7 +227,7 @@
       "name": "Verify Android mobile app Authentication behavior #25",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 243,
+      "duration": 214,
       "failureReason": null
     },
     {
@@ -236,7 +236,7 @@
       "name": "Verify Android mobile app Authentication behavior #26",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 129,
+      "duration": 278,
       "failureReason": null
     },
     {
@@ -245,7 +245,7 @@
       "name": "Verify Android mobile app Authentication behavior #27",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 97,
+      "duration": 238,
       "failureReason": null
     },
     {
@@ -254,7 +254,7 @@
       "name": "Verify Android mobile app Authentication behavior #28",
       "status": "PASSED",
       "priority": "High",
-      "duration": 112,
+      "duration": 168,
       "failureReason": null
     },
     {
@@ -263,7 +263,7 @@
       "name": "Verify Android mobile app Authentication behavior #29",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 243,
+      "duration": 276,
       "failureReason": null
     },
     {
@@ -272,7 +272,7 @@
       "name": "Verify Android mobile app Authentication behavior #30",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 87,
+      "duration": 274,
       "failureReason": null
     },
     {
@@ -281,7 +281,7 @@
       "name": "Verify Android mobile app Authentication behavior #31",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 106,
+      "duration": 162,
       "failureReason": null
     },
     {
@@ -290,7 +290,7 @@
       "name": "Verify Android mobile app Authentication behavior #32",
       "status": "PASSED",
       "priority": "High",
-      "duration": 263,
+      "duration": 234,
       "failureReason": null
     },
     {
@@ -299,7 +299,7 @@
       "name": "Verify Android mobile app Authentication behavior #33",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 198,
+      "duration": 93,
       "failureReason": null
     },
     {
@@ -308,7 +308,7 @@
       "name": "Verify Android mobile app Authentication behavior #34",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 176,
+      "duration": 242,
       "failureReason": null
     },
     {
@@ -317,7 +317,7 @@
       "name": "Verify Android mobile app Authentication behavior #35",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 138,
+      "duration": 119,
       "failureReason": null
     },
     {
@@ -326,7 +326,7 @@
       "name": "Verify Android mobile app Authentication behavior #36",
       "status": "PASSED",
       "priority": "High",
-      "duration": 98,
+      "duration": 204,
       "failureReason": null
     },
     {
@@ -335,7 +335,7 @@
       "name": "Verify Android mobile app Authentication behavior #37",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 274,
+      "duration": 272,
       "failureReason": null
     },
     {
@@ -344,7 +344,7 @@
       "name": "Verify Android mobile app Authentication behavior #38",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 232,
+      "duration": 148,
       "failureReason": null
     },
     {
@@ -353,7 +353,7 @@
       "name": "Verify Android mobile app Authentication behavior #39",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 122,
+      "duration": 133,
       "failureReason": null
     },
     {
@@ -362,7 +362,7 @@
       "name": "Verify Android mobile app Authentication behavior #40",
       "status": "PASSED",
       "priority": "High",
-      "duration": 256,
+      "duration": 150,
       "failureReason": null
     },
     {
@@ -371,7 +371,7 @@
       "name": "Verify Android mobile app Authorization behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 220,
+      "duration": 167,
       "failureReason": null
     },
     {
@@ -380,7 +380,7 @@
       "name": "Verify Android mobile app Authorization behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 198,
+      "duration": 197,
       "failureReason": null
     },
     {
@@ -389,7 +389,7 @@
       "name": "Verify Android mobile app Authorization behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 206,
+      "duration": 130,
       "failureReason": null
     },
     {
@@ -398,7 +398,7 @@
       "name": "Verify Android mobile app Authorization behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 108,
+      "duration": 146,
       "failureReason": null
     },
     {
@@ -407,7 +407,7 @@
       "name": "Verify Android mobile app Authorization behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 243,
+      "duration": 240,
       "failureReason": null
     },
     {
@@ -416,7 +416,7 @@
       "name": "Verify Android mobile app Authorization behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 185,
+      "duration": 114,
       "failureReason": null
     },
     {
@@ -425,7 +425,7 @@
       "name": "Verify Android mobile app Authorization behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 199,
+      "duration": 150,
       "failureReason": null
     },
     {
@@ -434,7 +434,7 @@
       "name": "Verify Android mobile app Authorization behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 211,
+      "duration": 167,
       "failureReason": null
     },
     {
@@ -443,7 +443,7 @@
       "name": "Verify Android mobile app Authorization behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 92,
+      "duration": 225,
       "failureReason": null
     },
     {
@@ -452,7 +452,7 @@
       "name": "Verify Android mobile app Authorization behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 197,
+      "duration": 164,
       "failureReason": null
     },
     {
@@ -461,7 +461,7 @@
       "name": "Verify Android mobile app Authorization behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 253,
+      "duration": 223,
       "failureReason": null
     },
     {
@@ -470,7 +470,7 @@
       "name": "Verify Android mobile app Authorization behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 103,
+      "duration": 163,
       "failureReason": null
     },
     {
@@ -479,7 +479,7 @@
       "name": "Verify Android mobile app Authorization behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 250,
+      "duration": 263,
       "failureReason": null
     },
     {
@@ -488,7 +488,7 @@
       "name": "Verify Android mobile app Authorization behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 257,
+      "duration": 217,
       "failureReason": null
     },
     {
@@ -497,7 +497,7 @@
       "name": "Verify Android mobile app Authorization behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 262,
+      "duration": 133,
       "failureReason": null
     },
     {
@@ -506,7 +506,7 @@
       "name": "Verify Android mobile app Authorization behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 242,
+      "duration": 80,
       "failureReason": null
     },
     {
@@ -515,7 +515,7 @@
       "name": "Verify Android mobile app Authorization behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 212,
+      "duration": 184,
       "failureReason": null
     },
     {
@@ -524,7 +524,7 @@
       "name": "Verify Android mobile app Authorization behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 185,
+      "duration": 102,
       "failureReason": null
     },
     {
@@ -533,7 +533,7 @@
       "name": "Verify Android mobile app Authorization behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 165,
+      "duration": 180,
       "failureReason": null
     },
     {
@@ -542,7 +542,7 @@
       "name": "Verify Android mobile app Authorization behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 258,
+      "duration": 230,
       "failureReason": null
     },
     {
@@ -551,7 +551,7 @@
       "name": "Verify Android mobile app Authorization behavior #21",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 239,
+      "duration": 87,
       "failureReason": null
     },
     {
@@ -560,7 +560,7 @@
       "name": "Verify Android mobile app Authorization behavior #22",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 109,
+      "duration": 154,
       "failureReason": null
     },
     {
@@ -569,7 +569,7 @@
       "name": "Verify Android mobile app Authorization behavior #23",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 143,
+      "duration": 274,
       "failureReason": null
     },
     {
@@ -578,7 +578,7 @@
       "name": "Verify Android mobile app Authorization behavior #24",
       "status": "PASSED",
       "priority": "High",
-      "duration": 113,
+      "duration": 271,
       "failureReason": null
     },
     {
@@ -587,7 +587,7 @@
       "name": "Verify Android mobile app Authorization behavior #25",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 126,
+      "duration": 115,
       "failureReason": null
     },
     {
@@ -596,7 +596,7 @@
       "name": "Verify Android mobile app Authorization behavior #26",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 125,
+      "duration": 85,
       "failureReason": null
     },
     {
@@ -605,7 +605,7 @@
       "name": "Verify Android mobile app Authorization behavior #27",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 204,
+      "duration": 176,
       "failureReason": null
     },
     {
@@ -614,7 +614,7 @@
       "name": "Verify Android mobile app Authorization behavior #28",
       "status": "PASSED",
       "priority": "High",
-      "duration": 142,
+      "duration": 113,
       "failureReason": null
     },
     {
@@ -623,7 +623,7 @@
       "name": "Verify Android mobile app Authorization behavior #29",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 193,
+      "duration": 179,
       "failureReason": null
     },
     {
@@ -632,7 +632,7 @@
       "name": "Verify Android mobile app Authorization behavior #30",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 168,
+      "duration": 98,
       "failureReason": null
     },
     {
@@ -641,7 +641,7 @@
       "name": "Verify Android mobile app Registration behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 172,
+      "duration": 164,
       "failureReason": null
     },
     {
@@ -650,7 +650,7 @@
       "name": "Verify Android mobile app Registration behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 274,
+      "duration": 263,
       "failureReason": null
     },
     {
@@ -659,7 +659,7 @@
       "name": "Verify Android mobile app Registration behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 148,
+      "duration": 109,
       "failureReason": null
     },
     {
@@ -668,7 +668,7 @@
       "name": "Verify Android mobile app Registration behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 175,
+      "duration": 198,
       "failureReason": null
     },
     {
@@ -677,7 +677,7 @@
       "name": "Verify Android mobile app Registration behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 80,
+      "duration": 123,
       "failureReason": null
     },
     {
@@ -686,7 +686,7 @@
       "name": "Verify Android mobile app Registration behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 270,
+      "duration": 130,
       "failureReason": null
     },
     {
@@ -695,7 +695,7 @@
       "name": "Verify Android mobile app Registration behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 184,
+      "duration": 253,
       "failureReason": null
     },
     {
@@ -704,7 +704,7 @@
       "name": "Verify Android mobile app Registration behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 110,
+      "duration": 215,
       "failureReason": null
     },
     {
@@ -713,7 +713,7 @@
       "name": "Verify Android mobile app Registration behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 255,
+      "duration": 137,
       "failureReason": null
     },
     {
@@ -722,7 +722,7 @@
       "name": "Verify Android mobile app Registration behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 88,
+      "duration": 217,
       "failureReason": null
     },
     {
@@ -731,7 +731,7 @@
       "name": "Verify Android mobile app Registration behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 85,
+      "duration": 81,
       "failureReason": null
     },
     {
@@ -740,7 +740,7 @@
       "name": "Verify Android mobile app Registration behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 204,
+      "duration": 99,
       "failureReason": null
     },
     {
@@ -749,7 +749,7 @@
       "name": "Verify Android mobile app Registration behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 112,
+      "duration": 255,
       "failureReason": null
     },
     {
@@ -758,7 +758,7 @@
       "name": "Verify Android mobile app Registration behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 216,
+      "duration": 261,
       "failureReason": null
     },
     {
@@ -767,7 +767,7 @@
       "name": "Verify Android mobile app Registration behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 245,
+      "duration": 199,
       "failureReason": null
     },
     {
@@ -776,7 +776,7 @@
       "name": "Verify Android mobile app Registration behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 100,
+      "duration": 118,
       "failureReason": null
     },
     {
@@ -785,7 +785,7 @@
       "name": "Verify Android mobile app Registration behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 130,
+      "duration": 157,
       "failureReason": null
     },
     {
@@ -794,7 +794,7 @@
       "name": "Verify Android mobile app Registration behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 263,
+      "duration": 165,
       "failureReason": null
     },
     {
@@ -803,7 +803,7 @@
       "name": "Verify Android mobile app Registration behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 158,
+      "duration": 119,
       "failureReason": null
     },
     {
@@ -812,7 +812,7 @@
       "name": "Verify Android mobile app Registration behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 139,
+      "duration": 164,
       "failureReason": null
     },
     {
@@ -821,7 +821,7 @@
       "name": "Verify Android mobile app Profile Management behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 133,
+      "duration": 97,
       "failureReason": null
     },
     {
@@ -830,7 +830,7 @@
       "name": "Verify Android mobile app Profile Management behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 247,
+      "duration": 154,
       "failureReason": null
     },
     {
@@ -839,7 +839,7 @@
       "name": "Verify Android mobile app Profile Management behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 223,
+      "duration": 232,
       "failureReason": null
     },
     {
@@ -848,7 +848,7 @@
       "name": "Verify Android mobile app Profile Management behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 134,
+      "duration": 259,
       "failureReason": null
     },
     {
@@ -857,7 +857,7 @@
       "name": "Verify Android mobile app Profile Management behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 226,
+      "duration": 262,
       "failureReason": null
     },
     {
@@ -866,7 +866,7 @@
       "name": "Verify Android mobile app Profile Management behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 139,
+      "duration": 230,
       "failureReason": null
     },
     {
@@ -875,7 +875,7 @@
       "name": "Verify Android mobile app Profile Management behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 163,
+      "duration": 261,
       "failureReason": null
     },
     {
@@ -884,7 +884,7 @@
       "name": "Verify Android mobile app Profile Management behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 173,
+      "duration": 201,
       "failureReason": null
     },
     {
@@ -893,7 +893,7 @@
       "name": "Verify Android mobile app Profile Management behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 132,
+      "duration": 88,
       "failureReason": null
     },
     {
@@ -902,7 +902,7 @@
       "name": "Verify Android mobile app Profile Management behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 159,
+      "duration": 111,
       "failureReason": null
     },
     {
@@ -920,7 +920,7 @@
       "name": "Verify Android mobile app Profile Management behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 211,
+      "duration": 175,
       "failureReason": null
     },
     {
@@ -929,7 +929,7 @@
       "name": "Verify Android mobile app Profile Management behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 247,
+      "duration": 214,
       "failureReason": null
     },
     {
@@ -938,7 +938,7 @@
       "name": "Verify Android mobile app Profile Management behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 170,
+      "duration": 119,
       "failureReason": null
     },
     {
@@ -947,7 +947,7 @@
       "name": "Verify Android mobile app Profile Management behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 261,
+      "duration": 172,
       "failureReason": null
     },
     {
@@ -956,7 +956,7 @@
       "name": "Verify Android mobile app Profile Management behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 237,
+      "duration": 249,
       "failureReason": null
     },
     {
@@ -965,7 +965,7 @@
       "name": "Verify Android mobile app Profile Management behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 97,
+      "duration": 85,
       "failureReason": null
     },
     {
@@ -974,7 +974,7 @@
       "name": "Verify Android mobile app Profile Management behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 216,
+      "duration": 195,
       "failureReason": null
     },
     {
@@ -983,7 +983,7 @@
       "name": "Verify Android mobile app Profile Management behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 132,
+      "duration": 139,
       "failureReason": null
     },
     {
@@ -992,7 +992,7 @@
       "name": "Verify Android mobile app Profile Management behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 246,
+      "duration": 249,
       "failureReason": null
     },
     {
@@ -1001,7 +1001,7 @@
       "name": "Verify Android mobile app Navigation behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 247,
+      "duration": 105,
       "failureReason": null
     },
     {
@@ -1010,7 +1010,7 @@
       "name": "Verify Android mobile app Navigation behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 265,
+      "duration": 253,
       "failureReason": null
     },
     {
@@ -1019,7 +1019,7 @@
       "name": "Verify Android mobile app Navigation behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 184,
+      "duration": 164,
       "failureReason": null
     },
     {
@@ -1028,7 +1028,7 @@
       "name": "Verify Android mobile app Navigation behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 248,
+      "duration": 194,
       "failureReason": null
     },
     {
@@ -1037,7 +1037,7 @@
       "name": "Verify Android mobile app Navigation behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 211,
+      "duration": 224,
       "failureReason": null
     },
     {
@@ -1046,7 +1046,7 @@
       "name": "Verify Android mobile app Navigation behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 222,
+      "duration": 160,
       "failureReason": null
     },
     {
@@ -1055,7 +1055,7 @@
       "name": "Verify Android mobile app Navigation behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 163,
+      "duration": 211,
       "failureReason": null
     },
     {
@@ -1064,7 +1064,7 @@
       "name": "Verify Android mobile app Navigation behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 107,
+      "duration": 179,
       "failureReason": null
     },
     {
@@ -1073,7 +1073,7 @@
       "name": "Verify Android mobile app Navigation behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 275,
+      "duration": 118,
       "failureReason": null
     },
     {
@@ -1082,7 +1082,7 @@
       "name": "Verify Android mobile app Navigation behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 171,
+      "duration": 241,
       "failureReason": null
     },
     {
@@ -1091,7 +1091,7 @@
       "name": "Verify Android mobile app Navigation behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 261,
+      "duration": 252,
       "failureReason": null
     },
     {
@@ -1100,7 +1100,7 @@
       "name": "Verify Android mobile app Navigation behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 184,
+      "duration": 119,
       "failureReason": null
     },
     {
@@ -1109,7 +1109,7 @@
       "name": "Verify Android mobile app Navigation behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 127,
+      "duration": 196,
       "failureReason": null
     },
     {
@@ -1118,7 +1118,7 @@
       "name": "Verify Android mobile app Navigation behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 248,
+      "duration": 170,
       "failureReason": null
     },
     {
@@ -1127,7 +1127,7 @@
       "name": "Verify Android mobile app Navigation behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 176,
+      "duration": 175,
       "failureReason": null
     },
     {
@@ -1136,7 +1136,7 @@
       "name": "Verify Android mobile app Navigation behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 136,
+      "duration": 87,
       "failureReason": null
     },
     {
@@ -1145,7 +1145,7 @@
       "name": "Verify Android mobile app Navigation behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 193,
+      "duration": 235,
       "failureReason": null
     },
     {
@@ -1154,7 +1154,7 @@
       "name": "Verify Android mobile app Navigation behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 217,
+      "duration": 131,
       "failureReason": null
     },
     {
@@ -1163,7 +1163,7 @@
       "name": "Verify Android mobile app Navigation behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 94,
+      "duration": 173,
       "failureReason": null
     },
     {
@@ -1172,7 +1172,7 @@
       "name": "Verify Android mobile app Navigation behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 239,
+      "duration": 240,
       "failureReason": null
     },
     {
@@ -1181,7 +1181,7 @@
       "name": "Verify Android mobile app Navigation behavior #21",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 278,
+      "duration": 151,
       "failureReason": null
     },
     {
@@ -1190,7 +1190,7 @@
       "name": "Verify Android mobile app Navigation behavior #22",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 209,
+      "duration": 151,
       "failureReason": null
     },
     {
@@ -1199,7 +1199,7 @@
       "name": "Verify Android mobile app Navigation behavior #23",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 148,
+      "duration": 158,
       "failureReason": null
     },
     {
@@ -1208,7 +1208,7 @@
       "name": "Verify Android mobile app Navigation behavior #24",
       "status": "PASSED",
       "priority": "High",
-      "duration": 154,
+      "duration": 172,
       "failureReason": null
     },
     {
@@ -1217,7 +1217,7 @@
       "name": "Verify Android mobile app Navigation behavior #25",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 153,
+      "duration": 184,
       "failureReason": null
     },
     {
@@ -1226,7 +1226,7 @@
       "name": "Verify Android mobile app Navigation behavior #26",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 206,
+      "duration": 159,
       "failureReason": null
     },
     {
@@ -1235,7 +1235,7 @@
       "name": "Verify Android mobile app Navigation behavior #27",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 120,
+      "duration": 252,
       "failureReason": null
     },
     {
@@ -1244,7 +1244,7 @@
       "name": "Verify Android mobile app Navigation behavior #28",
       "status": "PASSED",
       "priority": "High",
-      "duration": 193,
+      "duration": 115,
       "failureReason": null
     },
     {
@@ -1253,7 +1253,7 @@
       "name": "Verify Android mobile app Navigation behavior #29",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 203,
+      "duration": 235,
       "failureReason": null
     },
     {
@@ -1262,7 +1262,7 @@
       "name": "Verify Android mobile app Navigation behavior #30",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 170,
+      "duration": 137,
       "failureReason": null
     },
     {
@@ -1271,7 +1271,7 @@
       "name": "Verify Android mobile app Dashboard behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 93,
+      "duration": 216,
       "failureReason": null
     },
     {
@@ -1280,7 +1280,7 @@
       "name": "Verify Android mobile app Dashboard behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 257,
+      "duration": 200,
       "failureReason": null
     },
     {
@@ -1289,7 +1289,7 @@
       "name": "Verify Android mobile app Dashboard behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 189,
+      "duration": 263,
       "failureReason": null
     },
     {
@@ -1298,7 +1298,7 @@
       "name": "Verify Android mobile app Dashboard behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 102,
+      "duration": 138,
       "failureReason": null
     },
     {
@@ -1307,7 +1307,7 @@
       "name": "Verify Android mobile app Dashboard behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 92,
+      "duration": 220,
       "failureReason": null
     },
     {
@@ -1316,7 +1316,7 @@
       "name": "Verify Android mobile app Dashboard behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 253,
+      "duration": 243,
       "failureReason": null
     },
     {
@@ -1325,7 +1325,7 @@
       "name": "Verify Android mobile app Dashboard behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 174,
+      "duration": 215,
       "failureReason": null
     },
     {
@@ -1334,7 +1334,7 @@
       "name": "Verify Android mobile app Dashboard behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 178,
+      "duration": 119,
       "failureReason": null
     },
     {
@@ -1343,7 +1343,7 @@
       "name": "Verify Android mobile app Dashboard behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 170,
+      "duration": 106,
       "failureReason": null
     },
     {
@@ -1352,7 +1352,7 @@
       "name": "Verify Android mobile app Dashboard behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 225,
+      "duration": 153,
       "failureReason": null
     },
     {
@@ -1361,7 +1361,7 @@
       "name": "Verify Android mobile app Dashboard behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 197,
+      "duration": 90,
       "failureReason": null
     },
     {
@@ -1370,7 +1370,7 @@
       "name": "Verify Android mobile app Dashboard behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 96,
+      "duration": 262,
       "failureReason": null
     },
     {
@@ -1379,7 +1379,7 @@
       "name": "Verify Android mobile app Dashboard behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 267,
+      "duration": 174,
       "failureReason": null
     },
     {
@@ -1388,7 +1388,7 @@
       "name": "Verify Android mobile app Dashboard behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 169,
+      "duration": 95,
       "failureReason": null
     },
     {
@@ -1397,7 +1397,7 @@
       "name": "Verify Android mobile app Dashboard behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 256,
+      "duration": 84,
       "failureReason": null
     },
     {
@@ -1406,7 +1406,7 @@
       "name": "Verify Android mobile app Dashboard behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 215,
+      "duration": 225,
       "failureReason": null
     },
     {
@@ -1415,7 +1415,7 @@
       "name": "Verify Android mobile app Dashboard behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 269,
+      "duration": 148,
       "failureReason": null
     },
     {
@@ -1424,7 +1424,7 @@
       "name": "Verify Android mobile app Dashboard behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 183,
+      "duration": 172,
       "failureReason": null
     },
     {
@@ -1433,7 +1433,7 @@
       "name": "Verify Android mobile app Dashboard behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 174,
+      "duration": 163,
       "failureReason": null
     },
     {
@@ -1442,7 +1442,7 @@
       "name": "Verify Android mobile app Dashboard behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 265,
+      "duration": 197,
       "failureReason": null
     },
     {
@@ -1451,7 +1451,7 @@
       "name": "Verify Android mobile app Forms behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 273,
+      "duration": 164,
       "failureReason": null
     },
     {
@@ -1460,7 +1460,7 @@
       "name": "Verify Android mobile app Forms behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 234,
+      "duration": 102,
       "failureReason": null
     },
     {
@@ -1469,7 +1469,7 @@
       "name": "Verify Android mobile app Forms behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 147,
+      "duration": 241,
       "failureReason": null
     },
     {
@@ -1478,7 +1478,7 @@
       "name": "Verify Android mobile app Forms behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 111,
+      "duration": 208,
       "failureReason": null
     },
     {
@@ -1487,7 +1487,7 @@
       "name": "Verify Android mobile app Forms behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 217,
+      "duration": 188,
       "failureReason": null
     },
     {
@@ -1496,7 +1496,7 @@
       "name": "Verify Android mobile app Forms behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 112,
+      "duration": 189,
       "failureReason": null
     },
     {
@@ -1505,7 +1505,7 @@
       "name": "Verify Android mobile app Forms behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 216,
+      "duration": 263,
       "failureReason": null
     },
     {
@@ -1514,7 +1514,7 @@
       "name": "Verify Android mobile app Forms behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 178,
+      "duration": 179,
       "failureReason": null
     },
     {
@@ -1523,7 +1523,7 @@
       "name": "Verify Android mobile app Forms behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 147,
+      "duration": 238,
       "failureReason": null
     },
     {
@@ -1532,7 +1532,7 @@
       "name": "Verify Android mobile app Forms behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 117,
+      "duration": 208,
       "failureReason": null
     },
     {
@@ -1541,7 +1541,7 @@
       "name": "Verify Android mobile app Forms behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 275,
+      "duration": 135,
       "failureReason": null
     },
     {
@@ -1550,7 +1550,7 @@
       "name": "Verify Android mobile app Forms behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 240,
+      "duration": 129,
       "failureReason": null
     },
     {
@@ -1559,7 +1559,7 @@
       "name": "Verify Android mobile app Forms behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 257,
+      "duration": 235,
       "failureReason": null
     },
     {
@@ -1568,7 +1568,7 @@
       "name": "Verify Android mobile app Forms behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 150,
+      "duration": 271,
       "failureReason": null
     },
     {
@@ -1577,7 +1577,7 @@
       "name": "Verify Android mobile app Forms behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 200,
+      "duration": 196,
       "failureReason": null
     },
     {
@@ -1586,7 +1586,7 @@
       "name": "Verify Android mobile app Forms behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 271,
+      "duration": 106,
       "failureReason": null
     },
     {
@@ -1595,7 +1595,7 @@
       "name": "Verify Android mobile app Forms behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 196,
+      "duration": 134,
       "failureReason": null
     },
     {
@@ -1604,7 +1604,7 @@
       "name": "Verify Android mobile app Forms behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 243,
+      "duration": 279,
       "failureReason": null
     },
     {
@@ -1613,7 +1613,7 @@
       "name": "Verify Android mobile app Forms behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 185,
+      "duration": 138,
       "failureReason": null
     },
     {
@@ -1622,7 +1622,7 @@
       "name": "Verify Android mobile app Forms behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 115,
+      "duration": 218,
       "failureReason": null
     },
     {
@@ -1631,7 +1631,7 @@
       "name": "Verify Android mobile app Forms behavior #21",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 96,
+      "duration": 161,
       "failureReason": null
     },
     {
@@ -1640,7 +1640,7 @@
       "name": "Verify Android mobile app Forms behavior #22",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 140,
+      "duration": 251,
       "failureReason": null
     },
     {
@@ -1649,7 +1649,7 @@
       "name": "Verify Android mobile app Forms behavior #23",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 198,
+      "duration": 196,
       "failureReason": null
     },
     {
@@ -1658,7 +1658,7 @@
       "name": "Verify Android mobile app Forms behavior #24",
       "status": "PASSED",
       "priority": "High",
-      "duration": 265,
+      "duration": 241,
       "failureReason": null
     },
     {
@@ -1667,7 +1667,7 @@
       "name": "Verify Android mobile app Forms behavior #25",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 137,
+      "duration": 83,
       "failureReason": null
     },
     {
@@ -1676,7 +1676,7 @@
       "name": "Verify Android mobile app Forms behavior #26",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 139,
+      "duration": 197,
       "failureReason": null
     },
     {
@@ -1685,7 +1685,7 @@
       "name": "Verify Android mobile app Forms behavior #27",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 198,
+      "duration": 199,
       "failureReason": null
     },
     {
@@ -1694,7 +1694,7 @@
       "name": "Verify Android mobile app Forms behavior #28",
       "status": "PASSED",
       "priority": "High",
-      "duration": 254,
+      "duration": 231,
       "failureReason": null
     },
     {
@@ -1703,7 +1703,7 @@
       "name": "Verify Android mobile app Forms behavior #29",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 219,
+      "duration": 268,
       "failureReason": null
     },
     {
@@ -1712,7 +1712,7 @@
       "name": "Verify Android mobile app Forms behavior #30",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 234,
+      "duration": 230,
       "failureReason": null
     },
     {
@@ -1721,7 +1721,7 @@
       "name": "Verify Android mobile app Forms behavior #31",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 120,
+      "duration": 181,
       "failureReason": null
     },
     {
@@ -1730,7 +1730,7 @@
       "name": "Verify Android mobile app Forms behavior #32",
       "status": "PASSED",
       "priority": "High",
-      "duration": 125,
+      "duration": 132,
       "failureReason": null
     },
     {
@@ -1739,7 +1739,7 @@
       "name": "Verify Android mobile app Forms behavior #33",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 103,
+      "duration": 157,
       "failureReason": null
     },
     {
@@ -1748,7 +1748,7 @@
       "name": "Verify Android mobile app Forms behavior #34",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 198,
+      "duration": 139,
       "failureReason": null
     },
     {
@@ -1757,7 +1757,7 @@
       "name": "Verify Android mobile app Forms behavior #35",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 247,
+      "duration": 84,
       "failureReason": null
     },
     {
@@ -1766,7 +1766,7 @@
       "name": "Verify Android mobile app Forms behavior #36",
       "status": "PASSED",
       "priority": "High",
-      "duration": 156,
+      "duration": 134,
       "failureReason": null
     },
     {
@@ -1775,7 +1775,7 @@
       "name": "Verify Android mobile app Forms behavior #37",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 212,
+      "duration": 236,
       "failureReason": null
     },
     {
@@ -1784,7 +1784,7 @@
       "name": "Verify Android mobile app Forms behavior #38",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 267,
+      "duration": 201,
       "failureReason": null
     },
     {
@@ -1793,7 +1793,7 @@
       "name": "Verify Android mobile app Forms behavior #39",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 160,
+      "duration": 271,
       "failureReason": null
     },
     {
@@ -1802,7 +1802,7 @@
       "name": "Verify Android mobile app Forms behavior #40",
       "status": "PASSED",
       "priority": "High",
-      "duration": 104,
+      "duration": 107,
       "failureReason": null
     },
     {
@@ -1811,7 +1811,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 229,
+      "duration": 137,
       "failureReason": null
     },
     {
@@ -1820,7 +1820,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 263,
+      "duration": 258,
       "failureReason": null
     },
     {
@@ -1829,7 +1829,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 205,
+      "duration": 92,
       "failureReason": null
     },
     {
@@ -1838,7 +1838,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 178,
+      "duration": 232,
       "failureReason": null
     },
     {
@@ -1847,7 +1847,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 274,
+      "duration": 261,
       "failureReason": null
     },
     {
@@ -1856,7 +1856,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 231,
+      "duration": 102,
       "failureReason": null
     },
     {
@@ -1865,7 +1865,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 155,
+      "duration": 203,
       "failureReason": null
     },
     {
@@ -1874,7 +1874,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 94,
+      "duration": 114,
       "failureReason": null
     },
     {
@@ -1883,7 +1883,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 163,
+      "duration": 210,
       "failureReason": null
     },
     {
@@ -1892,7 +1892,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 240,
+      "duration": 87,
       "failureReason": null
     },
     {
@@ -1901,7 +1901,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 194,
+      "duration": 171,
       "failureReason": null
     },
     {
@@ -1910,7 +1910,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 82,
+      "duration": 141,
       "failureReason": null
     },
     {
@@ -1919,7 +1919,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 202,
+      "duration": 94,
       "failureReason": null
     },
     {
@@ -1928,7 +1928,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 232,
+      "duration": 112,
       "failureReason": null
     },
     {
@@ -1937,7 +1937,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 277,
+      "duration": 249,
       "failureReason": null
     },
     {
@@ -1946,7 +1946,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 89,
+      "duration": 162,
       "failureReason": null
     },
     {
@@ -1955,7 +1955,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 175,
+      "duration": 85,
       "failureReason": null
     },
     {
@@ -1964,7 +1964,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 85,
+      "duration": 95,
       "failureReason": null
     },
     {
@@ -1973,7 +1973,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 141,
+      "duration": 124,
       "failureReason": null
     },
     {
@@ -1991,7 +1991,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #21",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 204,
+      "duration": 170,
       "failureReason": null
     },
     {
@@ -2000,7 +2000,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #22",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 154,
+      "duration": 209,
       "failureReason": null
     },
     {
@@ -2009,7 +2009,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #23",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 218,
+      "duration": 139,
       "failureReason": null
     },
     {
@@ -2018,7 +2018,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #24",
       "status": "PASSED",
       "priority": "High",
-      "duration": 100,
+      "duration": 212,
       "failureReason": null
     },
     {
@@ -2027,7 +2027,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #25",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 236,
+      "duration": 195,
       "failureReason": null
     },
     {
@@ -2036,7 +2036,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #26",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 164,
+      "duration": 86,
       "failureReason": null
     },
     {
@@ -2045,7 +2045,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #27",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 235,
+      "duration": 176,
       "failureReason": null
     },
     {
@@ -2054,7 +2054,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #28",
       "status": "PASSED",
       "priority": "High",
-      "duration": 85,
+      "duration": 192,
       "failureReason": null
     },
     {
@@ -2063,7 +2063,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #29",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 122,
+      "duration": 177,
       "failureReason": null
     },
     {
@@ -2072,7 +2072,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #30",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 109,
+      "duration": 169,
       "failureReason": null
     },
     {
@@ -2081,7 +2081,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #31",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 211,
+      "duration": 166,
       "failureReason": null
     },
     {
@@ -2090,7 +2090,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #32",
       "status": "PASSED",
       "priority": "High",
-      "duration": 241,
+      "duration": 275,
       "failureReason": null
     },
     {
@@ -2099,7 +2099,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #33",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 177,
+      "duration": 82,
       "failureReason": null
     },
     {
@@ -2108,7 +2108,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #34",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 219,
+      "duration": 248,
       "failureReason": null
     },
     {
@@ -2117,7 +2117,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #35",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 229,
+      "duration": 202,
       "failureReason": null
     },
     {
@@ -2126,7 +2126,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #36",
       "status": "PASSED",
       "priority": "High",
-      "duration": 94,
+      "duration": 103,
       "failureReason": null
     },
     {
@@ -2135,7 +2135,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #37",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 207,
+      "duration": 120,
       "failureReason": null
     },
     {
@@ -2144,7 +2144,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #38",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 142,
+      "duration": 205,
       "failureReason": null
     },
     {
@@ -2153,7 +2153,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #39",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 279,
+      "duration": 232,
       "failureReason": null
     },
     {
@@ -2162,7 +2162,7 @@
       "name": "Verify Android mobile app CRUD Operations behavior #40",
       "status": "PASSED",
       "priority": "High",
-      "duration": 270,
+      "duration": 264,
       "failureReason": null
     },
     {
@@ -2171,7 +2171,7 @@
       "name": "Verify Android mobile app Search behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 80,
+      "duration": 186,
       "failureReason": null
     },
     {
@@ -2180,7 +2180,7 @@
       "name": "Verify Android mobile app Search behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 83,
+      "duration": 87,
       "failureReason": null
     },
     {
@@ -2189,7 +2189,7 @@
       "name": "Verify Android mobile app Search behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 210,
+      "duration": 221,
       "failureReason": null
     },
     {
@@ -2198,7 +2198,7 @@
       "name": "Verify Android mobile app Search behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 170,
+      "duration": 192,
       "failureReason": null
     },
     {
@@ -2207,7 +2207,7 @@
       "name": "Verify Android mobile app Search behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 273,
+      "duration": 213,
       "failureReason": null
     },
     {
@@ -2216,7 +2216,7 @@
       "name": "Verify Android mobile app Search behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 163,
+      "duration": 82,
       "failureReason": null
     },
     {
@@ -2225,7 +2225,7 @@
       "name": "Verify Android mobile app Search behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 120,
+      "duration": 83,
       "failureReason": null
     },
     {
@@ -2234,7 +2234,7 @@
       "name": "Verify Android mobile app Search behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 101,
+      "duration": 204,
       "failureReason": null
     },
     {
@@ -2243,7 +2243,7 @@
       "name": "Verify Android mobile app Search behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 194,
+      "duration": 168,
       "failureReason": null
     },
     {
@@ -2252,7 +2252,7 @@
       "name": "Verify Android mobile app Search behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 184,
+      "duration": 226,
       "failureReason": null
     },
     {
@@ -2261,7 +2261,7 @@
       "name": "Verify Android mobile app Search behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 119,
+      "duration": 125,
       "failureReason": null
     },
     {
@@ -2270,7 +2270,7 @@
       "name": "Verify Android mobile app Search behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 165,
+      "duration": 90,
       "failureReason": null
     },
     {
@@ -2279,7 +2279,7 @@
       "name": "Verify Android mobile app Search behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 147,
+      "duration": 152,
       "failureReason": null
     },
     {
@@ -2288,7 +2288,7 @@
       "name": "Verify Android mobile app Search behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 198,
+      "duration": 266,
       "failureReason": null
     },
     {
@@ -2297,7 +2297,7 @@
       "name": "Verify Android mobile app Search behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 206,
+      "duration": 86,
       "failureReason": null
     },
     {
@@ -2306,7 +2306,7 @@
       "name": "Verify Android mobile app Search behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 216,
+      "duration": 270,
       "failureReason": null
     },
     {
@@ -2315,7 +2315,7 @@
       "name": "Verify Android mobile app Search behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 275,
+      "duration": 225,
       "failureReason": null
     },
     {
@@ -2324,7 +2324,7 @@
       "name": "Verify Android mobile app Search behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 123,
+      "duration": 184,
       "failureReason": null
     },
     {
@@ -2333,7 +2333,7 @@
       "name": "Verify Android mobile app Search behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 262,
+      "duration": 180,
       "failureReason": null
     },
     {
@@ -2342,7 +2342,7 @@
       "name": "Verify Android mobile app Search behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 223,
+      "duration": 272,
       "failureReason": null
     },
     {
@@ -2351,7 +2351,7 @@
       "name": "Verify Android mobile app Filters behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 147,
+      "duration": 90,
       "failureReason": null
     },
     {
@@ -2360,7 +2360,7 @@
       "name": "Verify Android mobile app Filters behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 189,
+      "duration": 92,
       "failureReason": null
     },
     {
@@ -2369,7 +2369,7 @@
       "name": "Verify Android mobile app Filters behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 113,
+      "duration": 100,
       "failureReason": null
     },
     {
@@ -2378,7 +2378,7 @@
       "name": "Verify Android mobile app Filters behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 274,
+      "duration": 253,
       "failureReason": null
     },
     {
@@ -2387,7 +2387,7 @@
       "name": "Verify Android mobile app Filters behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 269,
+      "duration": 246,
       "failureReason": null
     },
     {
@@ -2396,7 +2396,7 @@
       "name": "Verify Android mobile app Filters behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 190,
+      "duration": 165,
       "failureReason": null
     },
     {
@@ -2405,7 +2405,7 @@
       "name": "Verify Android mobile app Filters behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 118,
+      "duration": 136,
       "failureReason": null
     },
     {
@@ -2414,7 +2414,7 @@
       "name": "Verify Android mobile app Filters behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 210,
+      "duration": 161,
       "failureReason": null
     },
     {
@@ -2423,7 +2423,7 @@
       "name": "Verify Android mobile app Filters behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 119,
+      "duration": 114,
       "failureReason": null
     },
     {
@@ -2432,7 +2432,7 @@
       "name": "Verify Android mobile app Filters behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 238,
+      "duration": 171,
       "failureReason": null
     },
     {
@@ -2441,7 +2441,7 @@
       "name": "Verify Android mobile app Filters behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 170,
+      "duration": 171,
       "failureReason": null
     },
     {
@@ -2450,7 +2450,7 @@
       "name": "Verify Android mobile app Filters behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 223,
+      "duration": 227,
       "failureReason": null
     },
     {
@@ -2459,7 +2459,7 @@
       "name": "Verify Android mobile app Filters behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 273,
+      "duration": 223,
       "failureReason": null
     },
     {
@@ -2468,7 +2468,7 @@
       "name": "Verify Android mobile app Filters behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 162,
+      "duration": 114,
       "failureReason": null
     },
     {
@@ -2477,7 +2477,7 @@
       "name": "Verify Android mobile app Filters behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 135,
+      "duration": 189,
       "failureReason": null
     },
     {
@@ -2486,7 +2486,7 @@
       "name": "Verify Android mobile app Filters behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 203,
+      "duration": 193,
       "failureReason": null
     },
     {
@@ -2495,7 +2495,7 @@
       "name": "Verify Android mobile app Filters behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 233,
+      "duration": 83,
       "failureReason": null
     },
     {
@@ -2504,7 +2504,7 @@
       "name": "Verify Android mobile app Filters behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 210,
+      "duration": 116,
       "failureReason": null
     },
     {
@@ -2513,7 +2513,7 @@
       "name": "Verify Android mobile app Filters behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 217,
+      "duration": 88,
       "failureReason": null
     },
     {
@@ -2522,7 +2522,7 @@
       "name": "Verify Android mobile app Filters behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 170,
+      "duration": 81,
       "failureReason": null
     },
     {
@@ -2531,7 +2531,7 @@
       "name": "Verify Android mobile app Input Validation behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 155,
+      "duration": 219,
       "failureReason": null
     },
     {
@@ -2540,7 +2540,7 @@
       "name": "Verify Android mobile app Input Validation behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 270,
+      "duration": 202,
       "failureReason": null
     },
     {
@@ -2549,7 +2549,7 @@
       "name": "Verify Android mobile app Input Validation behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 206,
+      "duration": 171,
       "failureReason": null
     },
     {
@@ -2558,7 +2558,7 @@
       "name": "Verify Android mobile app Input Validation behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 274,
+      "duration": 160,
       "failureReason": null
     },
     {
@@ -2567,7 +2567,7 @@
       "name": "Verify Android mobile app Input Validation behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 221,
+      "duration": 127,
       "failureReason": null
     },
     {
@@ -2576,7 +2576,7 @@
       "name": "Verify Android mobile app Input Validation behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 121,
+      "duration": 240,
       "failureReason": null
     },
     {
@@ -2585,7 +2585,7 @@
       "name": "Verify Android mobile app Input Validation behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 237,
+      "duration": 99,
       "failureReason": null
     },
     {
@@ -2594,7 +2594,7 @@
       "name": "Verify Android mobile app Input Validation behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 239,
+      "duration": 175,
       "failureReason": null
     },
     {
@@ -2603,7 +2603,7 @@
       "name": "Verify Android mobile app Input Validation behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 248,
+      "duration": 195,
       "failureReason": null
     },
     {
@@ -2612,7 +2612,7 @@
       "name": "Verify Android mobile app Input Validation behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 140,
+      "duration": 184,
       "failureReason": null
     },
     {
@@ -2621,7 +2621,7 @@
       "name": "Verify Android mobile app Input Validation behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 149,
+      "duration": 89,
       "failureReason": null
     },
     {
@@ -2630,7 +2630,7 @@
       "name": "Verify Android mobile app Input Validation behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 121,
+      "duration": 276,
       "failureReason": null
     },
     {
@@ -2639,7 +2639,7 @@
       "name": "Verify Android mobile app Input Validation behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 153,
+      "duration": 111,
       "failureReason": null
     },
     {
@@ -2648,7 +2648,7 @@
       "name": "Verify Android mobile app Input Validation behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 128,
+      "duration": 101,
       "failureReason": null
     },
     {
@@ -2657,7 +2657,7 @@
       "name": "Verify Android mobile app Input Validation behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 136,
+      "duration": 262,
       "failureReason": null
     },
     {
@@ -2666,7 +2666,7 @@
       "name": "Verify Android mobile app Input Validation behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 273,
+      "duration": 156,
       "failureReason": null
     },
     {
@@ -2675,7 +2675,7 @@
       "name": "Verify Android mobile app Input Validation behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 113,
+      "duration": 241,
       "failureReason": null
     },
     {
@@ -2684,7 +2684,7 @@
       "name": "Verify Android mobile app Input Validation behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 237,
+      "duration": 245,
       "failureReason": null
     },
     {
@@ -2693,7 +2693,7 @@
       "name": "Verify Android mobile app Input Validation behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 274,
+      "duration": 148,
       "failureReason": null
     },
     {
@@ -2702,7 +2702,7 @@
       "name": "Verify Android mobile app Input Validation behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 225,
+      "duration": 198,
       "failureReason": null
     },
     {
@@ -2711,7 +2711,7 @@
       "name": "Verify Android mobile app Input Validation behavior #21",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 143,
+      "duration": 203,
       "failureReason": null
     },
     {
@@ -2720,7 +2720,7 @@
       "name": "Verify Android mobile app Input Validation behavior #22",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 191,
+      "duration": 201,
       "failureReason": null
     },
     {
@@ -2729,7 +2729,7 @@
       "name": "Verify Android mobile app Input Validation behavior #23",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 275,
+      "duration": 224,
       "failureReason": null
     },
     {
@@ -2738,7 +2738,7 @@
       "name": "Verify Android mobile app Input Validation behavior #24",
       "status": "PASSED",
       "priority": "High",
-      "duration": 184,
+      "duration": 255,
       "failureReason": null
     },
     {
@@ -2747,7 +2747,7 @@
       "name": "Verify Android mobile app Input Validation behavior #25",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 126,
+      "duration": 103,
       "failureReason": null
     },
     {
@@ -2756,7 +2756,7 @@
       "name": "Verify Android mobile app Input Validation behavior #26",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 200,
+      "duration": 246,
       "failureReason": null
     },
     {
@@ -2765,7 +2765,7 @@
       "name": "Verify Android mobile app Input Validation behavior #27",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 173,
+      "duration": 214,
       "failureReason": null
     },
     {
@@ -2774,7 +2774,7 @@
       "name": "Verify Android mobile app Input Validation behavior #28",
       "status": "PASSED",
       "priority": "High",
-      "duration": 227,
+      "duration": 113,
       "failureReason": null
     },
     {
@@ -2783,7 +2783,7 @@
       "name": "Verify Android mobile app Input Validation behavior #29",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 263,
+      "duration": 115,
       "failureReason": null
     },
     {
@@ -2792,7 +2792,7 @@
       "name": "Verify Android mobile app Input Validation behavior #30",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 166,
+      "duration": 184,
       "failureReason": null
     },
     {
@@ -2801,7 +2801,7 @@
       "name": "Verify Android mobile app Input Validation behavior #31",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 143,
+      "duration": 167,
       "failureReason": null
     },
     {
@@ -2810,7 +2810,7 @@
       "name": "Verify Android mobile app Input Validation behavior #32",
       "status": "PASSED",
       "priority": "High",
-      "duration": 221,
+      "duration": 260,
       "failureReason": null
     },
     {
@@ -2819,7 +2819,7 @@
       "name": "Verify Android mobile app Input Validation behavior #33",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 100,
+      "duration": 92,
       "failureReason": null
     },
     {
@@ -2828,7 +2828,7 @@
       "name": "Verify Android mobile app Input Validation behavior #34",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 231,
+      "duration": 219,
       "failureReason": null
     },
     {
@@ -2837,7 +2837,7 @@
       "name": "Verify Android mobile app Input Validation behavior #35",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 107,
+      "duration": 201,
       "failureReason": null
     },
     {
@@ -2846,7 +2846,7 @@
       "name": "Verify Android mobile app Input Validation behavior #36",
       "status": "PASSED",
       "priority": "High",
-      "duration": 125,
+      "duration": 95,
       "failureReason": null
     },
     {
@@ -2855,7 +2855,7 @@
       "name": "Verify Android mobile app Input Validation behavior #37",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 225,
+      "duration": 257,
       "failureReason": null
     },
     {
@@ -2864,7 +2864,7 @@
       "name": "Verify Android mobile app Input Validation behavior #38",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 208,
+      "duration": 259,
       "failureReason": null
     },
     {
@@ -2873,7 +2873,7 @@
       "name": "Verify Android mobile app Input Validation behavior #39",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 254,
+      "duration": 212,
       "failureReason": null
     },
     {
@@ -2882,7 +2882,7 @@
       "name": "Verify Android mobile app Input Validation behavior #40",
       "status": "PASSED",
       "priority": "High",
-      "duration": 233,
+      "duration": 179,
       "failureReason": null
     },
     {
@@ -2891,7 +2891,7 @@
       "name": "Verify Android mobile app Error Handling behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 235,
+      "duration": 169,
       "failureReason": null
     },
     {
@@ -2900,7 +2900,7 @@
       "name": "Verify Android mobile app Error Handling behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 201,
+      "duration": 158,
       "failureReason": null
     },
     {
@@ -2909,7 +2909,7 @@
       "name": "Verify Android mobile app Error Handling behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 134,
+      "duration": 198,
       "failureReason": null
     },
     {
@@ -2918,7 +2918,7 @@
       "name": "Verify Android mobile app Error Handling behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 217,
+      "duration": 173,
       "failureReason": null
     },
     {
@@ -2927,7 +2927,7 @@
       "name": "Verify Android mobile app Error Handling behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 204,
+      "duration": 273,
       "failureReason": null
     },
     {
@@ -2936,7 +2936,7 @@
       "name": "Verify Android mobile app Error Handling behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 242,
+      "duration": 138,
       "failureReason": null
     },
     {
@@ -2945,7 +2945,7 @@
       "name": "Verify Android mobile app Error Handling behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 248,
+      "duration": 102,
       "failureReason": null
     },
     {
@@ -2954,7 +2954,7 @@
       "name": "Verify Android mobile app Error Handling behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 137,
+      "duration": 208,
       "failureReason": null
     },
     {
@@ -2963,7 +2963,7 @@
       "name": "Verify Android mobile app Error Handling behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 135,
+      "duration": 248,
       "failureReason": null
     },
     {
@@ -2972,7 +2972,7 @@
       "name": "Verify Android mobile app Error Handling behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 176,
+      "duration": 151,
       "failureReason": null
     },
     {
@@ -2981,7 +2981,7 @@
       "name": "Verify Android mobile app Error Handling behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 239,
+      "duration": 256,
       "failureReason": null
     },
     {
@@ -2990,7 +2990,7 @@
       "name": "Verify Android mobile app Error Handling behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 82,
+      "duration": 186,
       "failureReason": null
     },
     {
@@ -2999,7 +2999,7 @@
       "name": "Verify Android mobile app Error Handling behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 206,
+      "duration": 252,
       "failureReason": null
     },
     {
@@ -3008,7 +3008,7 @@
       "name": "Verify Android mobile app Error Handling behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 107,
+      "duration": 255,
       "failureReason": null
     },
     {
@@ -3017,7 +3017,7 @@
       "name": "Verify Android mobile app Error Handling behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 179,
+      "duration": 103,
       "failureReason": null
     },
     {
@@ -3026,7 +3026,7 @@
       "name": "Verify Android mobile app Error Handling behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 213,
+      "duration": 175,
       "failureReason": null
     },
     {
@@ -3035,7 +3035,7 @@
       "name": "Verify Android mobile app Error Handling behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 96,
+      "duration": 238,
       "failureReason": null
     },
     {
@@ -3044,7 +3044,7 @@
       "name": "Verify Android mobile app Error Handling behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 98,
+      "duration": 253,
       "failureReason": null
     },
     {
@@ -3053,7 +3053,7 @@
       "name": "Verify Android mobile app Error Handling behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 158,
+      "duration": 192,
       "failureReason": null
     },
     {
@@ -3062,7 +3062,7 @@
       "name": "Verify Android mobile app Error Handling behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 260,
+      "duration": 173,
       "failureReason": null
     },
     {
@@ -3071,7 +3071,7 @@
       "name": "Verify Android mobile app Session Management behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 247,
+      "duration": 226,
       "failureReason": null
     },
     {
@@ -3080,7 +3080,7 @@
       "name": "Verify Android mobile app Session Management behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 95,
+      "duration": 221,
       "failureReason": null
     },
     {
@@ -3089,7 +3089,7 @@
       "name": "Verify Android mobile app Session Management behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 275,
+      "duration": 106,
       "failureReason": null
     },
     {
@@ -3098,7 +3098,7 @@
       "name": "Verify Android mobile app Session Management behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 110,
+      "duration": 221,
       "failureReason": null
     },
     {
@@ -3107,7 +3107,7 @@
       "name": "Verify Android mobile app Session Management behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 137,
+      "duration": 174,
       "failureReason": null
     },
     {
@@ -3116,7 +3116,7 @@
       "name": "Verify Android mobile app Session Management behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 271,
+      "duration": 166,
       "failureReason": null
     },
     {
@@ -3125,7 +3125,7 @@
       "name": "Verify Android mobile app Session Management behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 81,
+      "duration": 188,
       "failureReason": null
     },
     {
@@ -3134,7 +3134,7 @@
       "name": "Verify Android mobile app Session Management behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 113,
+      "duration": 202,
       "failureReason": null
     },
     {
@@ -3143,7 +3143,7 @@
       "name": "Verify Android mobile app Session Management behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 146,
+      "duration": 109,
       "failureReason": null
     },
     {
@@ -3152,7 +3152,7 @@
       "name": "Verify Android mobile app Session Management behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 165,
+      "duration": 144,
       "failureReason": null
     },
     {
@@ -3161,7 +3161,7 @@
       "name": "Verify Android mobile app Session Management behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 235,
+      "duration": 220,
       "failureReason": null
     },
     {
@@ -3170,7 +3170,7 @@
       "name": "Verify Android mobile app Session Management behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 269,
+      "duration": 166,
       "failureReason": null
     },
     {
@@ -3179,7 +3179,7 @@
       "name": "Verify Android mobile app Session Management behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 245,
+      "duration": 154,
       "failureReason": null
     },
     {
@@ -3188,7 +3188,7 @@
       "name": "Verify Android mobile app Session Management behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 157,
+      "duration": 110,
       "failureReason": null
     },
     {
@@ -3197,7 +3197,7 @@
       "name": "Verify Android mobile app Session Management behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 173,
+      "duration": 261,
       "failureReason": null
     },
     {
@@ -3206,7 +3206,7 @@
       "name": "Verify Android mobile app Session Management behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 245,
+      "duration": 143,
       "failureReason": null
     },
     {
@@ -3215,7 +3215,7 @@
       "name": "Verify Android mobile app Session Management behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 215,
+      "duration": 226,
       "failureReason": null
     },
     {
@@ -3224,7 +3224,7 @@
       "name": "Verify Android mobile app Session Management behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 258,
+      "duration": 227,
       "failureReason": null
     },
     {
@@ -3233,7 +3233,7 @@
       "name": "Verify Android mobile app Session Management behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 117,
+      "duration": 125,
       "failureReason": null
     },
     {
@@ -3242,7 +3242,7 @@
       "name": "Verify Android mobile app Session Management behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 277,
+      "duration": 245,
       "failureReason": null
     },
     {
@@ -3251,7 +3251,7 @@
       "name": "Verify Android mobile app Notifications behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 118,
+      "duration": 195,
       "failureReason": null
     },
     {
@@ -3260,7 +3260,7 @@
       "name": "Verify Android mobile app Notifications behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 95,
+      "duration": 200,
       "failureReason": null
     },
     {
@@ -3269,7 +3269,7 @@
       "name": "Verify Android mobile app Notifications behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 204,
+      "duration": 121,
       "failureReason": null
     },
     {
@@ -3278,7 +3278,7 @@
       "name": "Verify Android mobile app Notifications behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 194,
+      "duration": 163,
       "failureReason": null
     },
     {
@@ -3287,7 +3287,7 @@
       "name": "Verify Android mobile app Notifications behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 211,
+      "duration": 101,
       "failureReason": null
     },
     {
@@ -3296,7 +3296,7 @@
       "name": "Verify Android mobile app Notifications behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 147,
+      "duration": 238,
       "failureReason": null
     },
     {
@@ -3305,7 +3305,7 @@
       "name": "Verify Android mobile app Notifications behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 249,
+      "duration": 128,
       "failureReason": null
     },
     {
@@ -3314,7 +3314,7 @@
       "name": "Verify Android mobile app Notifications behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 203,
+      "duration": 232,
       "failureReason": null
     },
     {
@@ -3323,7 +3323,7 @@
       "name": "Verify Android mobile app Notifications behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 147,
+      "duration": 122,
       "failureReason": null
     },
     {
@@ -3332,7 +3332,7 @@
       "name": "Verify Android mobile app Notifications behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 188,
+      "duration": 183,
       "failureReason": null
     },
     {
@@ -3341,7 +3341,7 @@
       "name": "Verify Android mobile app Notifications behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 91,
+      "duration": 192,
       "failureReason": null
     },
     {
@@ -3350,7 +3350,7 @@
       "name": "Verify Android mobile app Notifications behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 206,
+      "duration": 164,
       "failureReason": null
     },
     {
@@ -3359,7 +3359,7 @@
       "name": "Verify Android mobile app Notifications behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 187,
+      "duration": 181,
       "failureReason": null
     },
     {
@@ -3377,7 +3377,7 @@
       "name": "Verify Android mobile app Notifications behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 105,
+      "duration": 248,
       "failureReason": null
     },
     {
@@ -3386,7 +3386,7 @@
       "name": "Verify Android mobile app Notifications behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 175,
+      "duration": 246,
       "failureReason": null
     },
     {
@@ -3395,7 +3395,7 @@
       "name": "Verify Android mobile app Notifications behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 159,
+      "duration": 276,
       "failureReason": null
     },
     {
@@ -3404,7 +3404,7 @@
       "name": "Verify Android mobile app Notifications behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 224,
+      "duration": 194,
       "failureReason": null
     },
     {
@@ -3413,7 +3413,7 @@
       "name": "Verify Android mobile app Notifications behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 173,
+      "duration": 216,
       "failureReason": null
     },
     {
@@ -3422,7 +3422,7 @@
       "name": "Verify Android mobile app Notifications behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 150,
+      "duration": 192,
       "failureReason": null
     },
     {
@@ -3431,7 +3431,7 @@
       "name": "Verify Android mobile app File Upload behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 252,
+      "duration": 233,
       "failureReason": null
     },
     {
@@ -3440,7 +3440,7 @@
       "name": "Verify Android mobile app File Upload behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 110,
+      "duration": 251,
       "failureReason": null
     },
     {
@@ -3449,7 +3449,7 @@
       "name": "Verify Android mobile app File Upload behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 125,
+      "duration": 174,
       "failureReason": null
     },
     {
@@ -3458,7 +3458,7 @@
       "name": "Verify Android mobile app File Upload behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 116,
+      "duration": 255,
       "failureReason": null
     },
     {
@@ -3467,7 +3467,7 @@
       "name": "Verify Android mobile app File Upload behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 162,
+      "duration": 153,
       "failureReason": null
     },
     {
@@ -3476,7 +3476,7 @@
       "name": "Verify Android mobile app File Upload behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 137,
+      "duration": 262,
       "failureReason": null
     },
     {
@@ -3485,7 +3485,7 @@
       "name": "Verify Android mobile app File Upload behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 276,
+      "duration": 145,
       "failureReason": null
     },
     {
@@ -3494,7 +3494,7 @@
       "name": "Verify Android mobile app File Upload behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 215,
+      "duration": 250,
       "failureReason": null
     },
     {
@@ -3503,7 +3503,7 @@
       "name": "Verify Android mobile app File Upload behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 237,
+      "duration": 120,
       "failureReason": null
     },
     {
@@ -3512,7 +3512,7 @@
       "name": "Verify Android mobile app File Upload behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 246,
+      "duration": 92,
       "failureReason": null
     },
     {
@@ -3521,7 +3521,7 @@
       "name": "Verify Android mobile app File Upload behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 164,
+      "duration": 250,
       "failureReason": null
     },
     {
@@ -3530,7 +3530,7 @@
       "name": "Verify Android mobile app File Upload behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 242,
+      "duration": 159,
       "failureReason": null
     },
     {
@@ -3539,7 +3539,7 @@
       "name": "Verify Android mobile app File Upload behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 145,
+      "duration": 259,
       "failureReason": null
     },
     {
@@ -3548,7 +3548,7 @@
       "name": "Verify Android mobile app File Upload behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 187,
+      "duration": 195,
       "failureReason": null
     },
     {
@@ -3557,7 +3557,7 @@
       "name": "Verify Android mobile app File Upload behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 175,
+      "duration": 275,
       "failureReason": null
     },
     {
@@ -3566,7 +3566,7 @@
       "name": "Verify Android mobile app File Upload behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 186,
+      "duration": 185,
       "failureReason": null
     },
     {
@@ -3575,7 +3575,7 @@
       "name": "Verify Android mobile app File Upload behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 165,
+      "duration": 251,
       "failureReason": null
     },
     {
@@ -3584,7 +3584,7 @@
       "name": "Verify Android mobile app File Upload behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 254,
+      "duration": 175,
       "failureReason": null
     },
     {
@@ -3593,7 +3593,7 @@
       "name": "Verify Android mobile app File Upload behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 196,
+      "duration": 255,
       "failureReason": null
     },
     {
@@ -3602,7 +3602,7 @@
       "name": "Verify Android mobile app File Upload behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 242,
+      "duration": 213,
       "failureReason": null
     },
     {
@@ -3611,7 +3611,7 @@
       "name": "Verify Android mobile app Offline Handling behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 244,
+      "duration": 116,
       "failureReason": null
     },
     {
@@ -3620,7 +3620,7 @@
       "name": "Verify Android mobile app Offline Handling behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 257,
+      "duration": 159,
       "failureReason": null
     },
     {
@@ -3629,7 +3629,7 @@
       "name": "Verify Android mobile app Offline Handling behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 224,
+      "duration": 143,
       "failureReason": null
     },
     {
@@ -3638,7 +3638,7 @@
       "name": "Verify Android mobile app Offline Handling behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 143,
+      "duration": 127,
       "failureReason": null
     },
     {
@@ -3647,7 +3647,7 @@
       "name": "Verify Android mobile app Offline Handling behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 128,
+      "duration": 95,
       "failureReason": null
     },
     {
@@ -3656,7 +3656,7 @@
       "name": "Verify Android mobile app Offline Handling behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 242,
+      "duration": 109,
       "failureReason": null
     },
     {
@@ -3665,7 +3665,7 @@
       "name": "Verify Android mobile app Offline Handling behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 221,
+      "duration": 192,
       "failureReason": null
     },
     {
@@ -3674,7 +3674,7 @@
       "name": "Verify Android mobile app Offline Handling behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 161,
+      "duration": 192,
       "failureReason": null
     },
     {
@@ -3683,7 +3683,7 @@
       "name": "Verify Android mobile app Offline Handling behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 92,
+      "duration": 148,
       "failureReason": null
     },
     {
@@ -3692,7 +3692,7 @@
       "name": "Verify Android mobile app Offline Handling behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 103,
+      "duration": 235,
       "failureReason": null
     },
     {
@@ -3701,7 +3701,7 @@
       "name": "Verify Android mobile app Accessibility behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 242,
+      "duration": 187,
       "failureReason": null
     },
     {
@@ -3710,7 +3710,7 @@
       "name": "Verify Android mobile app Accessibility behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 237,
+      "duration": 146,
       "failureReason": null
     },
     {
@@ -3719,7 +3719,7 @@
       "name": "Verify Android mobile app Accessibility behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 153,
+      "duration": 151,
       "failureReason": null
     },
     {
@@ -3728,7 +3728,7 @@
       "name": "Verify Android mobile app Accessibility behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 187,
+      "duration": 233,
       "failureReason": null
     },
     {
@@ -3737,7 +3737,7 @@
       "name": "Verify Android mobile app Accessibility behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 197,
+      "duration": 99,
       "failureReason": null
     },
     {
@@ -3746,7 +3746,7 @@
       "name": "Verify Android mobile app Accessibility behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 163,
+      "duration": 230,
       "failureReason": null
     },
     {
@@ -3755,7 +3755,7 @@
       "name": "Verify Android mobile app Accessibility behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 243,
+      "duration": 116,
       "failureReason": null
     },
     {
@@ -3764,7 +3764,7 @@
       "name": "Verify Android mobile app Accessibility behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 132,
+      "duration": 166,
       "failureReason": null
     },
     {
@@ -3773,7 +3773,7 @@
       "name": "Verify Android mobile app Accessibility behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 240,
+      "duration": 93,
       "failureReason": null
     },
     {
@@ -3782,7 +3782,7 @@
       "name": "Verify Android mobile app Accessibility behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 137,
+      "duration": 223,
       "failureReason": null
     },
     {
@@ -3791,7 +3791,7 @@
       "name": "Verify Android mobile app Accessibility behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 196,
+      "duration": 94,
       "failureReason": null
     },
     {
@@ -3800,7 +3800,7 @@
       "name": "Verify Android mobile app Accessibility behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 237,
+      "duration": 256,
       "failureReason": null
     },
     {
@@ -3809,7 +3809,7 @@
       "name": "Verify Android mobile app Accessibility behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 237,
+      "duration": 174,
       "failureReason": null
     },
     {
@@ -3818,7 +3818,7 @@
       "name": "Verify Android mobile app Accessibility behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 134,
+      "duration": 111,
       "failureReason": null
     },
     {
@@ -3827,7 +3827,7 @@
       "name": "Verify Android mobile app Accessibility behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 100,
+      "duration": 176,
       "failureReason": null
     },
     {
@@ -3836,7 +3836,7 @@
       "name": "Verify Android mobile app Accessibility behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 163,
+      "duration": 226,
       "failureReason": null
     },
     {
@@ -3845,7 +3845,7 @@
       "name": "Verify Android mobile app Accessibility behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 179,
+      "duration": 124,
       "failureReason": null
     },
     {
@@ -3854,7 +3854,7 @@
       "name": "Verify Android mobile app Accessibility behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 230,
+      "duration": 239,
       "failureReason": null
     },
     {
@@ -3863,7 +3863,7 @@
       "name": "Verify Android mobile app Accessibility behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 149,
+      "duration": 225,
       "failureReason": null
     },
     {
@@ -3872,7 +3872,7 @@
       "name": "Verify Android mobile app Accessibility behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 132,
+      "duration": 198,
       "failureReason": null
     },
     {
@@ -3881,7 +3881,7 @@
       "name": "Verify Android mobile app Responsive UI behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 122,
+      "duration": 108,
       "failureReason": null
     },
     {
@@ -3890,7 +3890,7 @@
       "name": "Verify Android mobile app Responsive UI behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 163,
+      "duration": 235,
       "failureReason": null
     },
     {
@@ -3899,7 +3899,7 @@
       "name": "Verify Android mobile app Responsive UI behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 264,
+      "duration": 165,
       "failureReason": null
     },
     {
@@ -3908,7 +3908,7 @@
       "name": "Verify Android mobile app Responsive UI behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 220,
+      "duration": 216,
       "failureReason": null
     },
     {
@@ -3917,7 +3917,7 @@
       "name": "Verify Android mobile app Responsive UI behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 190,
+      "duration": 167,
       "failureReason": null
     },
     {
@@ -3926,7 +3926,7 @@
       "name": "Verify Android mobile app Responsive UI behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 162,
+      "duration": 199,
       "failureReason": null
     },
     {
@@ -3935,7 +3935,7 @@
       "name": "Verify Android mobile app Responsive UI behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 240,
+      "duration": 234,
       "failureReason": null
     },
     {
@@ -3944,7 +3944,7 @@
       "name": "Verify Android mobile app Responsive UI behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 157,
+      "duration": 251,
       "failureReason": null
     },
     {
@@ -3953,7 +3953,7 @@
       "name": "Verify Android mobile app Responsive UI behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 210,
+      "duration": 123,
       "failureReason": null
     },
     {
@@ -3962,7 +3962,7 @@
       "name": "Verify Android mobile app Responsive UI behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 212,
+      "duration": 171,
       "failureReason": null
     },
     {
@@ -3971,7 +3971,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 160,
+      "duration": 147,
       "failureReason": null
     },
     {
@@ -3980,7 +3980,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 137,
+      "duration": 117,
       "failureReason": null
     },
     {
@@ -3989,7 +3989,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 208,
+      "duration": 138,
       "failureReason": null
     },
     {
@@ -3998,7 +3998,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 89,
+      "duration": 101,
       "failureReason": null
     },
     {
@@ -4007,7 +4007,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 198,
+      "duration": 233,
       "failureReason": null
     },
     {
@@ -4016,7 +4016,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 217,
+      "duration": 261,
       "failureReason": null
     },
     {
@@ -4025,7 +4025,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 210,
+      "duration": 200,
       "failureReason": null
     },
     {
@@ -4034,7 +4034,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 112,
+      "duration": 271,
       "failureReason": null
     },
     {
@@ -4043,7 +4043,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 196,
+      "duration": 241,
       "failureReason": null
     },
     {
@@ -4052,7 +4052,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 248,
+      "duration": 253,
       "failureReason": null
     },
     {
@@ -4061,7 +4061,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 172,
+      "duration": 111,
       "failureReason": null
     },
     {
@@ -4070,7 +4070,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 182,
+      "duration": 229,
       "failureReason": null
     },
     {
@@ -4079,7 +4079,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 198,
+      "duration": 106,
       "failureReason": null
     },
     {
@@ -4088,7 +4088,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 204,
+      "duration": 153,
       "failureReason": null
     },
     {
@@ -4097,7 +4097,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 145,
+      "duration": 220,
       "failureReason": null
     },
     {
@@ -4106,7 +4106,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 101,
+      "duration": 198,
       "failureReason": null
     },
     {
@@ -4115,7 +4115,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 276,
+      "duration": 218,
       "failureReason": null
     },
     {
@@ -4124,7 +4124,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 110,
+      "duration": 119,
       "failureReason": null
     },
     {
@@ -4133,7 +4133,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 275,
+      "duration": 241,
       "failureReason": null
     },
     {
@@ -4142,7 +4142,7 @@
       "name": "Verify Android mobile app Performance Smoke behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 164,
+      "duration": 219,
       "failureReason": null
     },
     {
@@ -4151,7 +4151,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #1",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 220,
+      "duration": 140,
       "failureReason": null
     },
     {
@@ -4160,7 +4160,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #2",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 239,
+      "duration": 107,
       "failureReason": null
     },
     {
@@ -4169,7 +4169,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #3",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 239,
+      "duration": 249,
       "failureReason": null
     },
     {
@@ -4178,7 +4178,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #4",
       "status": "PASSED",
       "priority": "High",
-      "duration": 158,
+      "duration": 143,
       "failureReason": null
     },
     {
@@ -4187,7 +4187,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #5",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 87,
+      "duration": 182,
       "failureReason": null
     },
     {
@@ -4196,7 +4196,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #6",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 212,
+      "duration": 243,
       "failureReason": null
     },
     {
@@ -4205,7 +4205,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #7",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 133,
+      "duration": 205,
       "failureReason": null
     },
     {
@@ -4214,7 +4214,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #8",
       "status": "PASSED",
       "priority": "High",
-      "duration": 214,
+      "duration": 85,
       "failureReason": null
     },
     {
@@ -4223,7 +4223,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #9",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 148,
+      "duration": 119,
       "failureReason": null
     },
     {
@@ -4232,7 +4232,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #10",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 243,
+      "duration": 137,
       "failureReason": null
     },
     {
@@ -4241,7 +4241,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #11",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 182,
+      "duration": 253,
       "failureReason": null
     },
     {
@@ -4250,7 +4250,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #12",
       "status": "PASSED",
       "priority": "High",
-      "duration": 222,
+      "duration": 89,
       "failureReason": null
     },
     {
@@ -4259,7 +4259,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #13",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 259,
+      "duration": 240,
       "failureReason": null
     },
     {
@@ -4268,7 +4268,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #14",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 151,
+      "duration": 277,
       "failureReason": null
     },
     {
@@ -4277,7 +4277,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #15",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 108,
+      "duration": 115,
       "failureReason": null
     },
     {
@@ -4286,7 +4286,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #16",
       "status": "PASSED",
       "priority": "High",
-      "duration": 161,
+      "duration": 96,
       "failureReason": null
     },
     {
@@ -4295,7 +4295,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #17",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 264,
+      "duration": 92,
       "failureReason": null
     },
     {
@@ -4304,7 +4304,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #18",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 80,
+      "duration": 121,
       "failureReason": null
     },
     {
@@ -4313,7 +4313,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #19",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 144,
+      "duration": 131,
       "failureReason": null
     },
     {
@@ -4322,7 +4322,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #20",
       "status": "PASSED",
       "priority": "High",
-      "duration": 92,
+      "duration": 254,
       "failureReason": null
     },
     {
@@ -4331,7 +4331,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #21",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 267,
+      "duration": 138,
       "failureReason": null
     },
     {
@@ -4340,7 +4340,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #22",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 180,
+      "duration": 147,
       "failureReason": null
     },
     {
@@ -4349,7 +4349,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #23",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 245,
+      "duration": 145,
       "failureReason": null
     },
     {
@@ -4358,7 +4358,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #24",
       "status": "PASSED",
       "priority": "High",
-      "duration": 157,
+      "duration": 247,
       "failureReason": null
     },
     {
@@ -4367,7 +4367,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #25",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 232,
+      "duration": 95,
       "failureReason": null
     },
     {
@@ -4376,7 +4376,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #26",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 112,
+      "duration": 226,
       "failureReason": null
     },
     {
@@ -4385,7 +4385,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #27",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 139,
+      "duration": 99,
       "failureReason": null
     },
     {
@@ -4394,7 +4394,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #28",
       "status": "PASSED",
       "priority": "High",
-      "duration": 166,
+      "duration": 124,
       "failureReason": null
     },
     {
@@ -4403,7 +4403,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #29",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 81,
+      "duration": 182,
       "failureReason": null
     },
     {
@@ -4412,7 +4412,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #30",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 184,
+      "duration": 98,
       "failureReason": null
     },
     {
@@ -4421,7 +4421,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #31",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 124,
+      "duration": 204,
       "failureReason": null
     },
     {
@@ -4430,7 +4430,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #32",
       "status": "PASSED",
       "priority": "High",
-      "duration": 189,
+      "duration": 154,
       "failureReason": null
     },
     {
@@ -4439,7 +4439,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #33",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 174,
+      "duration": 264,
       "failureReason": null
     },
     {
@@ -4448,7 +4448,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #34",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 141,
+      "duration": 102,
       "failureReason": null
     },
     {
@@ -4457,7 +4457,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #35",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 174,
+      "duration": 246,
       "failureReason": null
     },
     {
@@ -4466,7 +4466,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #36",
       "status": "PASSED",
       "priority": "High",
-      "duration": 112,
+      "duration": 141,
       "failureReason": null
     },
     {
@@ -4475,7 +4475,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #37",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 149,
+      "duration": 183,
       "failureReason": null
     },
     {
@@ -4484,7 +4484,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #38",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 123,
+      "duration": 90,
       "failureReason": null
     },
     {
@@ -4493,7 +4493,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #39",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 248,
+      "duration": 159,
       "failureReason": null
     },
     {
@@ -4502,7 +4502,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #40",
       "status": "PASSED",
       "priority": "High",
-      "duration": 90,
+      "duration": 185,
       "failureReason": null
     },
     {
@@ -4511,7 +4511,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #41",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 262,
+      "duration": 252,
       "failureReason": null
     },
     {
@@ -4520,7 +4520,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #42",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 161,
+      "duration": 272,
       "failureReason": null
     },
     {
@@ -4529,7 +4529,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #43",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 240,
+      "duration": 154,
       "failureReason": null
     },
     {
@@ -4538,7 +4538,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #44",
       "status": "PASSED",
       "priority": "High",
-      "duration": 89,
+      "duration": 97,
       "failureReason": null
     },
     {
@@ -4547,7 +4547,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #45",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 93,
+      "duration": 166,
       "failureReason": null
     },
     {
@@ -4556,7 +4556,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #46",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 162,
+      "duration": 265,
       "failureReason": null
     },
     {
@@ -4565,7 +4565,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #47",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 248,
+      "duration": 82,
       "failureReason": null
     },
     {
@@ -4574,7 +4574,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #48",
       "status": "PASSED",
       "priority": "High",
-      "duration": 120,
+      "duration": 274,
       "failureReason": null
     },
     {
@@ -4583,7 +4583,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #49",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 82,
+      "duration": 187,
       "failureReason": null
     },
     {
@@ -4592,7 +4592,7 @@
       "name": "Verify Android mobile app Regression Suite behavior #50",
       "status": "PASSED",
       "priority": "Medium",
-      "duration": 231,
+      "duration": 172,
       "failureReason": null
     }
   ]

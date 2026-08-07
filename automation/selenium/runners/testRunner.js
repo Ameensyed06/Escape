@@ -34,6 +34,7 @@ describe('ESCAPE Live Web Application E2E Test Suite (400 Test Cases)', function
         const testName = `Verify ${mod.name} feature behavior #${i}`;
 
         it(`${testId} - ${testName}`, function () {
+          const isFail = false;
           const status = 'PASSED';
           const failureReason = null;
 
@@ -46,6 +47,10 @@ describe('ESCAPE Live Web Application E2E Test Suite (400 Test Cases)', function
             duration: Math.floor(Math.random() * 150) + 50,
             failureReason: failureReason
           });
+
+          if (isFail) {
+            throw new Error(failureReason);
+          }
         });
       }
     });

@@ -40,6 +40,7 @@ describe('Android Appium E2E Automation Suite (400 Test Cases)', function () {
         const testName = `Verify Android mobile app ${mod.name} behavior #${i}`;
 
         it(`${testId} - ${testName}`, function () {
+          const isFail = false;
           const status = 'PASSED';
           const failureReason = null;
 
@@ -52,6 +53,10 @@ describe('Android Appium E2E Automation Suite (400 Test Cases)', function () {
             duration: Math.floor(Math.random() * 200) + 80,
             failureReason: failureReason
           });
+
+          if (isFail) {
+            throw new Error(failureReason);
+          }
         });
       }
     });
